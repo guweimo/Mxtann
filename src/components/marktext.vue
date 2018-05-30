@@ -2,10 +2,13 @@
     <div>
         <div class="mark-div clear">
             <div class="mark-tips">
-                <span>提示：</span>
-                <span>(# ): h1-h6看#的个数;</span>
-                <span>(**?**): 粗体;</span>
-                <span>(*?*): 斜体</span>
+                <div>提示：</div>
+                <ul>
+                    <li>(# ): h1-h6看#的个数</li>
+                    <li>(**?**): 粗体</li>
+                    <li>(*?*): 斜体</li>
+                    <li>(__?__): 强调（strong）</li>
+                </ul>
             </div>
             <button class="btn btn-default mark-button" @click="showPreviewDialog">
                 预览
@@ -75,6 +78,10 @@ export default {
                 result = hEArr[size][0] + val.replace(hE[0], '') + hEArr[size][1];
             }
 
+            // 把__?__内容转成<strong>?</strong>
+            result = result.replace(/__(.*?)__/g, `<strong>$1</strong>`)
+
+            
             result = result.replace(/\*\*\*(.*?)\*\*\*/g, (x, y, z) => {
                 if (y.indexOf('<') > -1 && y.indexOf('>') > -1 && y.indexOf('/')) {
                     return x;

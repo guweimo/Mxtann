@@ -1,4 +1,4 @@
-$border-color: #eee;
+$border-color: #cecece;
 $border-style: 1px solid $border-color;
 $min-height: 500px;
 $min-width: 45%;
@@ -6,14 +6,52 @@ $max-width: 100%;
 
 .mark-div {
     margin: 0 5%;
-    textarea {border: $border-style; border-radius: 5px;resize: none; padding: 20px 10px; font-size: 14px;box-sizing:border-box;width: $max-width; min-height: $min-height;}
+    padding-top: 20px;
+    textarea {
+        border: $border-style;
+        border-radius: 5px;
+        resize: none;
+        padding: 20px 10px;
+        font-size: 14px;
+        box-sizing:border-box;
+        width: $max-width;
+        min-height: $min-height;
+    }
 }
 .mark-tips {
-    padding: 10px 0;
+    padding: 10px;
+    border: $border-style;
+    margin-bottom: 20px;
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 2.5em;
+        li {
+            padding: 0.5em;
+            color: #9ce8ed;
+        }
+    }
 }
-.mark-main { float: right; width: $min-width; height: $min-height; }
-.mark-text {border: $border-style;  text-align: left; padding: 20px; overflow: hidden; word-break: break-all;word-wrap: break-word; height: $max-width; box-sizing: border-box;}
-.mark-button { display: none; margin-top: 10px; margin-bottom: 20px;}
+.mark-main {
+    float: right;
+    width: $min-width;
+    height: $min-height;
+}
+.mark-text {
+    border: $border-style;
+    text-align: left;
+    padding: 20px;
+    overflow: hidden;
+    word-break: break-all;
+    word-wrap: break-word;
+    height: $max-width;
+    box-sizing: border-box;
+}
+.mark-button {
+    display: none;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
 
 @media (min-width: 768px) {
     .mark-area {width: $min-width; float: left;}
