@@ -4,6 +4,14 @@ $min-height: 500px;
 $min-width: 45%;
 $max-width: 100%;
 
+@mixin pos-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
 .mark-div {
     margin: 0 5%;
     padding-top: 20px;
@@ -28,7 +36,10 @@ $max-width: 100%;
         padding-left: 2.5em;
         li {
             padding: 0.5em;
-            color: #9ce8ed;
+            color: #fff;
+            margin: 0.5em;
+            border-radius: 0.4em;
+            background-color: #9ce8ed;
         }
     }
 }
@@ -62,9 +73,35 @@ $max-width: 100%;
     .mark-area { width: $max-width; float: left; }
 }
 
-.dialog { width: 100vw; height: 100vh; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
-.dialog-backdrop { z-index: 1; width: 100%; height: 100%; background-color: #222; opacity: .5; }
+.dialog {
+    // width: 100vw;
+    // height: 100vh;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    position: fixed;
+}
+.dialog-backdrop {
+    z-index: 1;
+    @include pos-fixed;
+    background-color: #222;
+    opacity: .5;
+}
 .dialog-content {
-    z-index: 10; width: 90%; height: 90%; margin: auto; position: fixed; top: 0; left: 0; bottom: 0; right: 0; background-color: #fff; padding: 10px; box-sizing: border-box; border: 1px solid #aaa; border-radius: 1.3%;box-shadow: 0 3px 7px rgba(0,0,0,0.3);
-    h1 { text-align: center; margin-bottom: 10px; }
+    z-index: 10;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    @include pos-fixed;
+    background-color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #aaa;
+    border-radius: 1.3%;
+    box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+    h2 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
 }

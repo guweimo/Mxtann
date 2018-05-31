@@ -8,6 +8,8 @@
                     <li>(**?**): 粗体</li>
                     <li>(*?*): 斜体</li>
                     <li>(__?__): 强调（strong）</li>
+                    <li>[?](?): 链接</li>
+                    <li>>?: 引用</li>
                 </ul>
             </div>
             <button class="btn btn-default mark-button" @click="showPreviewDialog">
@@ -17,13 +19,13 @@
                 <textarea :value="textVal"   @input="updateValue($event)"></textarea>
             </div>
             <div class="mark-main">
-                <div class="mark-text" v-html="htmlVal"></div>
+                <div class="mark-text markdowm-body" v-html="htmlVal"></div>
             </div>
         </div>
         <div class="dialog" v-show="showDialog">
             <div class="dialog-content">
-                <h1>内容预览</h1>
-                <div v-html="htmlVal">
+                <h2>内容预览</h2>
+                <div class="markdowm-body" v-html="htmlVal">
                 </div>
             </div>
             <div class="dialog-backdrop" @click="showPreviewDialog"></div>
@@ -61,6 +63,7 @@ export default {
                         this.htmlVal += this.handleMark(item) + '</br>'
                     }
                 }
+                // this.htmlVal = this.handleMark(value);
             } else {
                 this.htmlVal = this.handleMark(value)
             }
@@ -79,9 +82,14 @@ export default {
             }
 
             // 把__?__内容转成<strong>?</strong>
-            result = result.replace(/__(.*?)__/g, `<strong>$1</strong>`)
+            result = result.replace(/^__(.*?)__$/, `<strong>$1</strong>`)
 
-            
+            // 把[?](?)转成a标签链接。
+            result = result.replace(/\[(.*?)\]\((.*?)\)/g, `<a href="$2">$1</a>`);
+
+            // 把 >?转成引用<blockquote></blockquote>
+            result = result.replace(/^&gt;(.*?)$/g, `<blockquote><p>$1</p></blockquote>`);
+
             result = result.replace(/\*\*\*(.*?)\*\*\*/g, (x, y, z) => {
                 if (y.indexOf('<') > -1 && y.indexOf('>') > -1 && y.indexOf('/')) {
                     return x;
