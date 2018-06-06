@@ -90,6 +90,7 @@ export default {
             // 把 >?转成引用<blockquote></blockquote>
             result = result.replace(/^&gt;(.*?)$/g, `<blockquote><p>$1</p></blockquote>`);
 
+            // 转成加粗并斜体
             result = result.replace(/\*\*\*(.*?)\*\*\*/g, (x, y, z) => {
                 if (y.indexOf('<') > -1 && y.indexOf('>') > -1 && y.indexOf('/')) {
                     return x;
@@ -98,6 +99,7 @@ export default {
                 }
             })
 
+            // 转成加粗
             result = result.replace(/\*\*(.*?)\*\*/g, function(x, y, z) {
                 if (y.indexOf('<') > -1 && y.indexOf('>') > -1 && y.indexOf('/')) {
                     return x;
@@ -106,6 +108,7 @@ export default {
                 }
             });
 
+            // 转成斜体
             result = result.replace(/\*(.*?)\*/g, (x, y, z) => {
                 if (y.indexOf('<') > -1 && y.indexOf('>') > -1 && y.indexOf('/') > -1) {
                     return x;
