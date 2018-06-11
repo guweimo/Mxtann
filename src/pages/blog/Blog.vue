@@ -42,5 +42,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/sass/blog';
+@import 'src/assets/sass/blog';
 </style>
