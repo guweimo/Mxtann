@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="mark-div clear">
-            <div class="mark-tips">
+            <div class="mark-tips" v-show="showTips">
                 <div>提示：</div>
                 <ul>
                     <li>(# ): h1-h6看#的个数</li>
@@ -37,7 +37,13 @@
 <script>
 export default {
     name: 'marktext',
-    props: ['value'],
+    props: {
+        value: String,
+        showTips: {
+            type: Boolean,
+            default: true
+        }
+    },
     data() {
         return {
             textVal: this.value,

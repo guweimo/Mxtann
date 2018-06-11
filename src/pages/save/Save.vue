@@ -1,6 +1,6 @@
 <template>
 <div>
-    <marktext v-model="textarea"></marktext>
+    <marktext v-model="textarea" :show-tips="false"></marktext>
 </div>
 </template>
 
