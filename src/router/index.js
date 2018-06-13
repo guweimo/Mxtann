@@ -1,9 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 import Blog from '@/pages/blog/Blog'
 import Save from '@/pages/save/Save'
-import Test from '@/components/test'
 import markPreview from '@/pages/preview/markPreview'
 
 Vue.use(Router)
