@@ -75,7 +75,14 @@ export default {
             }
         },
         handleMark: function(value) {
-            let hEArr = [['<h1>', '</h1>'], ['<h2>', '</h2>'], ['<h3>', '</h3>'], ['<h4>', '</h4>'], ['<h5>', '</h5>'], ['<h6>', '</h6>']]
+            let hEArr = [
+                ['<h1>', '</h1>'],
+                ['<h2>', '</h2>'], 
+                ['<h3>', '</h3>'], 
+                ['<h4>', '</h4>'], 
+                ['<h5>', '</h5>'], 
+                ['<h6>', '</h6>']
+            ];
             let hE = value.match(/#{1,6} /g);
             let val = value.replace(/</g, '&lt;');
             val = val.replace(/>/g, '&gt;');
@@ -108,7 +115,7 @@ export default {
             // 转成加粗
             result = result.replace(/\*\*(.*?)\*\*/g, function(x, y, z) {
                 if (y.indexOf('<') > -1 && y.indexOf('>') > -1 && y.indexOf('/')) {
-                    return x;
+                return x;
                 } else {
                     return `<strong>${y}</strong>`;
                 }
