@@ -1,23 +1,53 @@
 $default-color: #52bab3;
 
 // 默认样式 start
-body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { 
+    margin:0;
+    padding:0;
+}
 /* body, button, input, select, textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; } */
 /* h1, h2, h3, h4, h5, h6{ font-size:100%; } */
-address, cite, dfn, em, var { font-style:normal; }
-code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
-small{ font-size:12px; }
-ul, ol { list-style:none; }
-a { text-decoration:none; }
-a:hover { text-decoration:underline; }
-sup { vertical-align:text-top; }
-sub{ vertical-align:text-bottom; }
-legend { color:#000; }
-fieldset, img { border:0; }
+address, cite, dfn, em, var { 
+    font-style:normal;
+}
+code, kbd, pre, samp { 
+    font-family:couriernew, courier, monospace;
+}
+small{ 
+    font-size:12px; 
+}
+ul, ol { 
+    list-style:none; 
+}
+a { 
+    text-decoration:none; 
+}
+a:hover { 
+    text-decoration:underline; 
+}
+sup { 
+    vertical-align:text-top; 
+}
+sub{ 
+    vertical-align:text-bottom; 
+}
+legend { 
+    color:#000; 
+}
+fieldset, img { 
+    border:0; 
+}
 // button, input, select, textarea { font-size:100%; }
-table { border-collapse:collapse; border-spacing:0; }
-a, button { cursor: pointer; }
-html, body { height: 100%; }
+table { 
+    border-collapse:collapse; 
+    border-spacing:0; 
+}
+a, button { 
+    cursor: pointer; 
+}
+html, body { 
+    height: 100%; 
+}
 // 默认样式 end
 
 #app {
@@ -41,7 +71,11 @@ html, body { height: 100%; }
 
 // 按钮样式
 .btn {
-    padding: 10px 20px; border: 0; border-radius: 5px; color: #fff; text-transform: uppercase;
+    padding: 10px 20px; 
+    border: 0; 
+    border-radius: 5px; 
+    color: #fff; 
+    text-transform: uppercase;
     &:hover, &:focus, &:active {
         outline: none !important;
         color: #fff;

@@ -43,5 +43,57 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'src/assets/sass/blog';
+    $px-10: 10px;
+    $color-default: #5C4FB4; // #52bab3
+    $font-color: #fff; // .blog-div {text-align: center;}
+
+    .blog-div {
+        display: flex;
+        flex-direction: column;
+        background-color: $color-default;
+        min-height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .blog-align {
+        h2 {
+            color: $font-color;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    }
+
+    .blog-ul {
+        text-align: center;
+
+        a {
+            text-decoration: none;
+            color: $font-color;
+        }
+
+        li {
+            display: inline;
+
+            &:not(:last-of-type) {
+                margin-right: $px-10;
+
+                &::after {
+                    content: '|';
+                    padding-left: $px-10;
+                    color: $font-color;
+                }
+            }
+        }
+    }
+
+    .blog-logo {
+        height: 200px;
+        width: 200px;
+        background-image: url("../../assets/picture.jpg");
+        background-repeat: no-repeat;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        border: 4px solid #ccc;
+    }
 </style>
