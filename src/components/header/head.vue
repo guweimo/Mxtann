@@ -2,8 +2,8 @@
     <header class="header">
         <nav>
             <ul>
-                <li>
-                    <a href="">JavaScript</a>
+                <li v-for="item in navList" :key="item.title">
+                    <a :href="item.url" v-text="item.title"></a>
                 </li>
             </ul>
         </nav>
@@ -13,8 +13,18 @@
 <script>
 export default {
     name: "head",
+    props: {
+        navList: {
+            type: Array,
+            default: []
+        }
+    },
     data() {
         return {};
     }
 };
 </script>
+
+<style lang="scss" scoped>
+    
+</style>

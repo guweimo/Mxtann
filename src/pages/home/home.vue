@@ -1,16 +1,18 @@
 <template>
-    <head></head>
+    <head-nav :nav-list="listArr"></head-nav>
 </template>
 
 <script>
-import head from '@/compoents/header/head'
+import headNav from '@/compoents/header/head'
 
 export default {
     components: {
         head
     },
     data() {
-        return {}
+        return {
+            listArr: []
+        }
     }
 }
 </script>
