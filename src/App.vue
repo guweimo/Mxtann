@@ -1,8 +1,8 @@
 <template>
     <div id="app">
-        <head-nav :nav-list="listArr" v-if="isBlogRouter"></head-nav>
+        <head-nav :nav-list="listArr" v-if="!isBlogRouter"></head-nav>
         <router-view/>
-        <footer-col v-if="isBlogRouter"></footer-col>
+        <footer-col v-if="!isBlogRouter"></footer-col>
     </div>
 </template>
 
@@ -27,6 +27,19 @@ export default {
             'isBlogRouter'
         ]),
     },
+    mounted() {
+        this.test();
+    },
+    methods: {
+        test: function () {
+            this.axios.get('/static/Serivce/nav.json')
+            .then( (re) => {
+                if (re.status == 200) {
+                    this.listArr = re.data;
+                }
+            })
+        }
+    }
 }
 </script>
 <style lang="scss">
