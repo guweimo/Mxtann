@@ -16,6 +16,8 @@
 </template>
 
 <script>
+import {mapState, mapMutations} from 'vuex'
+
 export default {
     name: 'Blog',
     data() {
@@ -38,6 +40,18 @@ export default {
                 }
             ]
         }
+    },
+    mounted() {
+        this.TRUE_BLOG_ROUTER();
+    },
+    methods: {
+        ...mapMutations([
+            'TRUE_BLOG_ROUTER',
+            'FALSE_BLOG_ROUTER'
+        ]),
+    },
+    destroyed () {
+        this.FALSE_BLOG_ROUTER();
     }
 }
 </script>
