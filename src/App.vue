@@ -1,12 +1,14 @@
 <template>
     <div id="app">
-        <head-nav :nav-list="listArr" ng-if="isBlogRouter"></head-nav>
+        <head-nav :nav-list="listArr" v-if="isBlogRouter"></head-nav>
         <router-view/>
+        <footer-col v-if="isBlogRouter"></footer-col>
     </div>
 </template>
 
 <script>
 import headNav from '@/components/header/headNav'
+import footerCol from '@/components/footer/footerCol'
 import {mapState} from 'vuex'
 
 export default {
@@ -17,7 +19,8 @@ export default {
         }
     },
     components: {
-        headNav
+        headNav,
+        footerCol
     },
     computed: {
         ...mapState([
@@ -29,5 +32,3 @@ export default {
 <style lang="scss">
 @import './assets/sass/base';
 </style>
-
-<!-- <style src="./assets/sass/base.css"></style> -->
