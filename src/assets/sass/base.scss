@@ -51,6 +51,8 @@ html, body {
 // 默认样式 end
 body {
     padding-top: 45px;
+    background-color: #eee;
+    color: #2c3e50;
 }
 
 .body-no-padding { 
@@ -63,6 +65,15 @@ body {
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
     height: 100%;
+    width: 100%;
+}
+
+
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    zoom: 1;
 }
 
 /* ------------ 公共样式 start ------------ */
