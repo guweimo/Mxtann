@@ -42,8 +42,12 @@ export default {
         box-shadow: 0 3px 3px -2px hsla(0,0%,0%,0.13);
         z-index: 10;
         .container {
-            width: 90%;
-            margin: 0 auto;
+            max-width: 1360px;
+            padding: 0 10px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            margin-top: 20px;
         }
     }
 
