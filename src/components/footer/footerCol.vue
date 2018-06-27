@@ -1,6 +1,5 @@
 <template>
     <footer>
-        喵。
     </footer>
 </template>
 

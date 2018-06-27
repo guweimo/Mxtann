@@ -4,7 +4,7 @@
             <nav>
                 <ul class="menu">
                     <li id="logo">
-                        <a href="/">Mxtan</a>
+                        <a href="/home">Mxtan</a>
                     </li>
                     <li v-for="item in navList" :key="item.title">
                         <a :href="item.url" v-text="item.title"></a>

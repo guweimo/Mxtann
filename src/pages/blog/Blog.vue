@@ -43,6 +43,8 @@ export default {
     },
     mounted() {
         this.TRUE_BLOG_ROUTER();
+        let body = document.querySelector('body');
+        body.className = 'body-no-padding';
     },
     methods: {
         ...mapMutations([
