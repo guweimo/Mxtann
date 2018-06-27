@@ -47,7 +47,6 @@ export default {
             margin-left: auto;
             margin-right: auto;
             position: relative;
-            margin-top: 20px;
         }
     }
 
