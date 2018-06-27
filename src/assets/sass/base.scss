@@ -23,7 +23,7 @@ a {
     text-decoration:none; 
 }
 a:hover { 
-    text-decoration:underline; 
+    text-decoration: none; 
 }
 sup { 
     vertical-align:text-top; 
@@ -49,6 +49,9 @@ html, body {
     height: 100%; 
 }
 // 默认样式 end
+body {
+    padding-top: 45px;
+}
 
 #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;

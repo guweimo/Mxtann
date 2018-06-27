@@ -9,11 +9,11 @@
 <script>
 import headNav from '@/components/header/headNav'
 import footerCol from '@/components/footer/footerCol'
-import {mapState} from 'vuex'
+import { mapState } from 'vuex'
 
 export default {
     name: 'App',
-    data () {
+    data() {
         return {
             listArr: []
         }
@@ -23,19 +23,16 @@ export default {
         footerCol
     },
     computed: {
-        ...mapState([
-            'isBlogRouter'
-        ]),
+        ...mapState(['isBlogRouter'])
     },
     mounted() {
-        this.test();
+        this.getListData()
     },
     methods: {
-        test: function () {
-            this.axios.get('/static/Serivce/nav.json')
-            .then( (re) => {
+        getListData: function() {
+            this.axios.get('/static/Serivce/nav.json').then(re => {
                 if (re.status == 200) {
-                    this.listArr = re.data;
+                    this.listArr = re.data
                 }
             })
         }
