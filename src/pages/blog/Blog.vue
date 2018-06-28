@@ -5,7 +5,7 @@
             <div class="blog-logo">
             </div>
             <h2>谷维陌</h2>
-            <ul class="clear blog-ul">
+            <ul class="clearfix blog-ul">
                 <li v-for="item in urlList" v-bind:key="item.title">
                     <a :href="item.url" :target="item.target" v-text="item.title"></a>
                     <!-- <router-link :to="item.url" v-text="item.title"></router-link> -->

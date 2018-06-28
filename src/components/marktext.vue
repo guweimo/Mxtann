@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="mark-div clear">
+        <div class="mark-div clearfix">
             <div class="mark-tips" v-show="showTips">
                 <div>提示：</div>
                 <ul>

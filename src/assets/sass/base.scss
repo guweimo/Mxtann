@@ -21,9 +21,11 @@ ul, ol {
 }
 a { 
     text-decoration:none; 
+    color: #29B4F0;
 }
 a:hover { 
     text-decoration: none; 
+    color: #0d8abf;
 }
 sup { 
     vertical-align:text-top; 
@@ -55,6 +57,10 @@ body {
     color: #2c3e50;
 }
 
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
 .body-no-padding { 
     padding-top: 0;
 }
@@ -79,7 +85,7 @@ body {
 /* ------------ 公共样式 start ------------ */
 
 // 清除浮动
-.clear::after {
+.clearfix::after {
     display: block;
     clear: both;
     visibility: hidden;
