@@ -3,19 +3,21 @@
         <div class="container">
             <div class="col-main">
                 <div class="main-wrap">
-                    <div class="page-content">
+                    <div class="page-content" v-for="item in list" :key="item.id">
                         <div class="article">
                             <h1>
-                                <a>移动端上的设计和适配</a>
+                                <a v-text="item.title"></a>
                             </h1>
                             <div class="article-header">
                                 <div class="">
-                                    作者：<span>fasdfa</span>
-                                    日期：<span>2018-06-22</span>
+                                    作者：<span v-text="item.author"></span>
+                                    日期：<span v-text="item.date"></span>
                                 </div>
                             </div>
                             <div class="body-content">
-                                
+                                <div class="">
+                                    <p v-text="item.description"></p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -28,8 +30,15 @@
 <script>
 export default {
     data() {
-        return {}
+        return {
+            list: []
+        }
     },
+    mounted() {
+        this.$axios.get('/static/Serivce/list.json').then( (res) => {
+            this.list = res.data;
+        })
+    }
 }
 </script>
 
@@ -48,6 +57,10 @@ export default {
         margin: 0 0 20px;
         border: 1px solid #ddd;
         position: relative;
+        transition: box-shadow 0.3s ease;
+        &:hover {
+            box-shadow: 2px 2px 8px hsla(0,0%,0%,0.13);
+        }
     }
     .article {
         h1 {
@@ -57,6 +70,11 @@ export default {
                 font-size: 24px;
                 transition: color 0.3s ease;
             }
+        }
+        p {
+            font-size: 16px;
+            line-height: 30px;
+            margin-bottom: 25px;
         }
     }
     .article-header {

@@ -7,7 +7,7 @@ import store from './store/'
 import {request} from './config/axios'
 
 Vue.config.productionTip = false
-Vue.prototype.axios = request;
+Vue.prototype.$axios = request;
 
 /* eslint-disable no-new */
 new Vue({

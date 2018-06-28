@@ -30,7 +30,7 @@ export default {
     },
     methods: {
         getListData: function() {
-            this.axios.get('/static/Serivce/nav.json').then(re => {
+            this.$axios.get('/static/Serivce/nav.json').then(re => {
                 if (re.status == 200) {
                     this.listArr = re.data
                 }
