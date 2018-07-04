@@ -7,6 +7,7 @@ export const request = {
             url: url,
             params: data || {},
             headers: type || {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
                 'X-Requested-With': 'XMLHttpRequest',
             }
         }

@@ -30,10 +30,13 @@ export default {
     },
     methods: {
         getListData: function() {
-            this.$axios.get('/static/Serivce/nav.json').then(re => {
-                if (re.status == 200) {
-                    this.listArr = re.data
-                }
+            // this.$axios.get('/static/Serivce/nav.json').then(re => {
+            //     if (re.status == 200) {
+            //         this.listArr = re.data
+            //     }
+            // })
+            this.$axios.get('http://localhost:3000/add/navlist').then(re => {
+
             })
         }
     }
