@@ -7,8 +7,7 @@ export const request = {
             url: url,
             params: data || {},
             headers: type || {
-                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-                'X-Requested-With': 'XMLHttpRequest',
+                'Content-Type': 'application/x-www-form-urlencoded'
             }
         }
         return axios(config)
@@ -19,8 +18,7 @@ export const request = {
             url: url,
             data: data || {},
             headers: type || {
-                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-				'X-Requested-With': 'XMLHttpRequest',
+                'Content-Type': 'application/x-www-form-urlencoded'
             }
         }
         return axios(config);

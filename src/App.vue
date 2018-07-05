@@ -36,7 +36,9 @@ export default {
             //     }
             // })
             this.$axios.get('http://localhost:3000/add/navlist').then(re => {
-
+                if (re.status == 200) {
+                    this.listArr = re.data;
+                }
             })
         }
     }
