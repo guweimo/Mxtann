@@ -39,7 +39,9 @@ export default {
     },
     mounted() {
         this.$axios.post('http://localhost:3000/home/list').then( (res) => {
-            this.list = res.data;
+            if (res.data.status == 2000) {
+                this.list = res.data.data;
+            }
         })
     }
 }

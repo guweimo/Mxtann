@@ -36,8 +36,8 @@ export default {
             //     }
             // })
             this.$axios.get('http://localhost:3000/home/navlist').then(re => {
-                if (re.status == 200) {
-                    this.listArr = re.data;
+                if (re.data.status == 2000) {
+                    this.listArr = re.data.data;
                 }
             })
         }
