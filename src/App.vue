@@ -35,7 +35,7 @@ export default {
             //         this.listArr = re.data
             //     }
             // })
-            this.$axios.get('http://localhost:3000/add/navlist').then(re => {
+            this.$axios.get('http://localhost:3000/home/navlist').then(re => {
                 if (re.status == 200) {
                     this.listArr = re.data;
                 }

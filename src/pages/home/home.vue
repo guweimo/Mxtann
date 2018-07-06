@@ -2,7 +2,7 @@
     <main>
         <div class="container">
             <div class="col-main">
-                <div class="main-wrap">
+                <div class="main-wrap" v-if="list.length > 0">
                     <div class="page-content" v-for="item in list" :key="item.id">
                         <div class="article">
                             <h1>
@@ -22,6 +22,9 @@
                         </div>
                     </div>
                 </div>
+                <div class="main-wrap">
+                    <div></div>
+                </div>
             </div>
         </div>
     </main>
@@ -35,7 +38,7 @@ export default {
         }
     },
     mounted() {
-        this.$axios.get('/static/Serivce/list.json').then( (res) => {
+        this.$axios.post('http://localhost:3000/home/list').then( (res) => {
             this.list = res.data;
         })
     }
