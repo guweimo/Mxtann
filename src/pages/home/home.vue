@@ -56,6 +56,9 @@ export default {
         position: relative;
         margin-top: 20px;
     }
+    .container {
+        width: 100%;
+    }
     .page-content {
         background: #fff;
         padding: 20px;
