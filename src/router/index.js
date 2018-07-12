@@ -4,6 +4,8 @@ import Blog from '@/pages/blog/Blog'
 import Save from '@/pages/save/Save'
 import markPreview from '@/pages/preview/markPreview'
 import Home from '@/pages/home/home'
+import signIn from '@/pages/sign/signIn'
+import signUp from '@/pages/sign/signUp'
 
 Vue.use(Router)
 
@@ -13,6 +15,8 @@ export default new Router({
         { path: '/', component: Blog },
         { path: '/save', component: Save },
         { path: '/markPreview', component: markPreview },
-        { path: '/home', component: Home},
+        { path: '/home', component: Home },
+        { path: '/signIn', component: signIn },
+        { path: 'signUp', component: signUp },
     ]
 })
