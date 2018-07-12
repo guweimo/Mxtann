@@ -48,17 +48,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .container {
-        max-width: 1360px;
-        padding: 0 10px;
-        margin-left: auto;
-        margin-right: auto;
-        position: relative;
-        margin-top: 20px;
-    }
-    .container {
-        width: 100%;
-    }
     .page-content {
         background: #fff;
         padding: 20px;

@@ -115,6 +115,18 @@ body {
     }
 }
 
+.container {
+    max-width: 1360px;
+    padding: 0 10px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    margin-top: 20px;
+}
+.container {
+    width: 100%;
+}
+
 /* ------------ 公共样式 end ------------ */
 
 
@@ -135,3 +147,5 @@ body {
     }
 }
 // ------------ 设置markdown内容里的样式 end ------------
+
+
