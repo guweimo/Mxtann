@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="markdown-container">
         <div class="mark-div clearfix">
             <div class="mark-tips" v-show="showTips">
                 <div>提示：</div>
@@ -31,7 +31,6 @@
             <div class="dialog-backdrop" @click="showPreviewDialog"></div>
         </div>
     </div>
-
 </template>
 
 <script>
