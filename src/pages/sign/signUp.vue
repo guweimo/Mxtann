@@ -4,11 +4,11 @@
             <form>
                 <h2>注册</h2>
                 <label for="register_name">用户名</label>
-                <input type="text" class="form-control input-block" id="register_name">
+                <input type="text" class="form-control input-block" id="register_name" v-model="name">
                 <label for="register_email">邮箱</label>
-                <input type="email" class="form-control input-block" id="register_email">
+                <input type="email" class="form-control input-block" id="register_email" v-model="email">
                 <label for="register_pass">密码</label>
-                <input type="password" class="form-control input-block" id="register_pass">
+                <input type="password" class="form-control input-block" id="register_pass" v-model="pass">
                 <button class="btn btn-default">注册</button>
             </form>
         </div>
@@ -20,7 +20,11 @@ import {mapState, mapMutations} from 'vuex'
 
 export default {
     data() {
-        return {}
+        return {
+            name: '',
+            email: '',
+            pass: ''
+        }
     },
     mounted() {
         this.TRUE_BLOG_ROUTER();
@@ -51,7 +55,7 @@ export default {
     }
     .form {
         width: 300px;
-        height: 400px;
+        min-height: 400px;
         background: #fff;
         padding: 20px;
         border-radius: 5px;

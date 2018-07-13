@@ -4,9 +4,9 @@
             <form>
                 <h2>登录Mxtan</h2>
                 <label for="login_name">用户名</label>
-                <input type="text" class="form-control input-block" id="login_name">
+                <input type="text" class="form-control input-block" id="login_name" v-model="name">
                 <label for="login_pass">密码</label>
-                <input type="password" class="form-control input-block" id="login_pass">
+                <input type="password" class="form-control input-block" id="login_pass" v-model="pass">
                 <button class="btn btn-default">登录</button>
             </form>
         </div>
@@ -19,7 +19,10 @@ import {mapState, mapMutations} from 'vuex'
 // 登录
 export default {
     data() {
-        return {}
+        return {
+            name: '',
+            pass: ''
+        }
     },
     mounted() {
         this.TRUE_BLOG_ROUTER();
