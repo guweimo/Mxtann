@@ -36,7 +36,7 @@ export default {
     $color-green: #52bab3;
 
     #sign-in {
-        background: $color-default;
+        background: $color-green;
         min-height: 100%;
         display: flex;
         align-items: center;
@@ -48,11 +48,11 @@ export default {
         border: 1px solid #d8dee2;
         background: #eee;
         border-radius: 1%;
-        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0);
+        box-shadow: 5px 6px 4px rgba(0, 0, 0, 0.2);
+        padding: 10px;
         h2 {
             text-align: center;
-            padding: 10px 0;
-            color: $color-green;
+            color: $color-default;
         }
     }
 </style>
