@@ -34,8 +34,8 @@ export default {
                     target: '_blank'
                 },
                 {
-                    url: '/save',
-                    title: 'save',
+                    url: '/home',
+                    title: 'home',
                     target: '_self'
                 }
             ]
