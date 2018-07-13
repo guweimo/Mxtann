@@ -16,7 +16,7 @@ export default new Router({
         { path: '/save', component: Save },
         { path: '/markPreview', component: markPreview },
         { path: '/home', component: Home },
-        { path: '/signIn', component: signIn },
-        { path: 'signUp', component: signUp },
+        { path: '/login', component: signIn },
+        { path: '/signUp', component: signUp },
     ]
 })
