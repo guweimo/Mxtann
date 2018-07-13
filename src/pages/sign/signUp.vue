@@ -41,7 +41,8 @@ export default {
         validation() {
             return {
                 name: !!this.formData.name.trim() && this.formData.name.trim().length > 5,
-                email: emailRE.test(this.formData.email)
+                email: emailRE.test(this.formData.email),
+                pass: this.formData.pass.length >= 6 && this.formData.name.length <= 21
             }
         },
         isValid() {
@@ -55,7 +56,9 @@ export default {
             'FALSE_BLOG_ROUTER'
         ]),
         register() {
-            
+            // if (this.isValid) {
+
+            // }
         }
     },
     destroyed() {
