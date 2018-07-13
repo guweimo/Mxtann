@@ -1,7 +1,14 @@
 <template>
     <div id="sign-in">
         <div class="form">
-            <h2>登录Mxtan</h2>
+            <form>
+                <h2>登录Mxtan</h2>
+                <label for="login_name">用户名</label>
+                <input type="text" class="form-control input-block" id="login_name">
+                <label for="login_pass">密码</label>
+                <input type="password" class="form-control input-block" id="login_pass">
+                <button class="btn btn-default">登录</button>
+            </form>
         </div>
     </div>
 </template>
@@ -49,10 +56,25 @@ export default {
         background: #eee;
         border-radius: 1%;
         box-shadow: 5px 6px 4px rgba(0, 0, 0, 0.2);
-        padding: 10px;
+        padding: 20px;
         h2 {
             text-align: center;
-            color: $color-default;
+            // color: $color-default;
+            font-weight: 300;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 7px;
+        }
+        input {
+            margin-top: 7px;
+            margin-bottom: 15px;
+        }
+        button {
+            width: 100%;
+            margin-top: 15px;
         }
     }
 </style>

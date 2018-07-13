@@ -17,6 +17,6 @@ export default new Router({
         { path: '/markPreview', component: markPreview },
         { path: '/home', component: Home },
         { path: '/login', component: signIn },
-        { path: '/signUp', component: signUp },
+        { path: '/register', component: signUp },
     ]
 })

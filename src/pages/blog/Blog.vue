@@ -60,7 +60,7 @@ export default {
 
 <style lang="scss" scoped>
     $px-10: 10px;
-    $color-default: #5C4FB4; // #52bab3
+    $color-default: #52bab3; // #52bab3
     $font-color: #fff; // .blog-div {text-align: center;}
 
     .blog-div {
