@@ -25,9 +25,9 @@ export default {
         }
     },
     mounted() {
-        this.TRUE_BLOG_ROUTER();
-        let body = document.querySelector('body');
-        body.className = 'body-no-padding';
+        this.TRUE_BLOG_ROUTER()
+        let body = document.querySelector('body')
+        body.className = 'body-no-padding'
     },
     methods: {
         ...mapMutations([
@@ -36,7 +36,7 @@ export default {
         ])        
     },
     destroyed() {
-        this.FALSE_BLOG_ROUTER();
+        this.FALSE_BLOG_ROUTER()
     }
 }
 </script>
