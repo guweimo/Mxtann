@@ -16,7 +16,7 @@
                 预览
             </button>
             <div class="mark-area">
-                <textarea :value="textVal"   @input="updateValue($event)"></textarea>
+                <textarea :value="textVal" @input="updateValue($event)"></textarea>
             </div>
             <div class="mark-main">
                 <div class="mark-text markdowm-body" v-html="htmlVal"></div>
@@ -52,13 +52,13 @@ export default {
         }
     },
     methods: {
-        updateValue: function($event) {
+        updateValue($event) {
             const value = $event.target.value
             this.$emit('input', value)
             this.textVal = value
             this.updateHtml(value)
         },
-        updateHtml: function(value) {
+        updateHtml(value) {
             // this.htmlVal = value;
             this.htmlVal = '';
             let valArr = value.split('\n');
@@ -74,7 +74,7 @@ export default {
                 this.htmlVal = this.handleMark(value)
             }
         },
-        handleMark: function(value) {
+        handleMark(value) {
             let hEArr = [
                 ['<h1>', '</h1>'],
                 ['<h2>', '</h2>'], 
@@ -131,7 +131,7 @@ export default {
             });
             return result
         },
-        showPreviewDialog: function() {
+        showPreviewDialog() {
             this.showDialog = !this.showDialog;
         }
     }

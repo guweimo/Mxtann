@@ -52,7 +52,7 @@ export default {
             'FALSE_BLOG_ROUTER'
         ]),
     },
-    destroyed () {
+    destroyed() {
         this.FALSE_BLOG_ROUTER();
     }
 }
