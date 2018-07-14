@@ -10,8 +10,10 @@
                             </h1>
                             <div class="article-header">
                                 <div class="">
-                                    作者：<span v-text="item.author"></span>
-                                    日期：<span v-text="item.date"></span>
+                                    作者：
+                                    <span v-text="item.author"></span>
+                                    日期：
+                                    <span v-text="item.date"></span>
                                 </div>
                             </div>
                             <div class="body-content">
@@ -38,9 +40,9 @@ export default {
         }
     },
     mounted() {
-        this.$axios.post('http://localhost:3000/home/list').then( (res) => {
+        this.$axios.post('http://localhost:3000/home/list').then(res => {
             if (res.data.status == 2000) {
-                this.list = res.data.data;
+                this.list = res.data.data
             }
         })
     }
@@ -48,37 +50,37 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .page-content {
-        background: #fff;
-        padding: 20px;
-        margin: 0 0 20px;
-        border: 1px solid #ddd;
-        position: relative;
-        transition: box-shadow 0.3s ease;
-        &:hover {
-            box-shadow: 2px 2px 8px hsla(0,0%,0%,0.13);
+.page-content {
+    background: #fff;
+    padding: 20px;
+    margin: 0 0 20px;
+    border: 1px solid #ddd;
+    position: relative;
+    transition: box-shadow 0.3s ease;
+    &:hover {
+        box-shadow: 2px 2px 8px hsla(0, 0%, 0%, 0.13);
+    }
+}
+.article {
+    h1 {
+        margin: 0 0 15px;
+        a {
+            display: block;
+            font-size: 24px;
+            transition: color 0.3s ease;
         }
     }
-    .article {
-        h1 {
-            margin: 0 0 15px;
-            a {
-                display: block;
-                font-size: 24px;
-                transition: color 0.3s ease;
-            }
-        }
-        p {
-            font-size: 16px;
-            line-height: 30px;
-            margin-bottom: 25px;
-        }
+    p {
+        font-size: 16px;
+        line-height: 30px;
+        margin-bottom: 25px;
     }
-    .article-header {
-        margin-bottom: 10px;
-        font-size: 14px;
-        color: #ccc;
-        padding-bottom: 5px;
-        border-bottom: 1px dashed #ddd;
-    }
+}
+.article-header {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #ccc;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #ddd;
+}
 </style>

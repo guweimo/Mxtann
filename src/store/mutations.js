@@ -5,9 +5,9 @@ import {
 
 export default {
     [TRUE_BLOG_ROUTER] (state) {
-        state.isBlogRouter = true;
+        state.isBlogRouter = true
     },
     [FALSE_BLOG_ROUTER] (state) {
-        state.isBlogRouter = false;
+        state.isBlogRouter = false
     }
 }

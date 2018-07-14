@@ -1,7 +1,7 @@
 <template>
-<div>
-    <marktext v-model="textarea" :show-tips="false"></marktext>
-</div>
+    <div>
+        <marktext v-model="textarea" :show-tips="false"></marktext>
+    </div>
 </template>
 
 <script>

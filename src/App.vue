@@ -30,14 +30,9 @@ export default {
     },
     methods: {
         getListData: function() {
-            // this.$axios.get('/static/Serivce/nav.json').then(re => {
-            //     if (re.status == 200) {
-            //         this.listArr = re.data
-            //     }
-            // })
             this.$axios.get('http://localhost:3000/home/navlist').then(re => {
                 if (re.data.status == 2000) {
-                    this.listArr = re.data.data;
+                    this.listArr = re.data.data
                 }
             })
         }

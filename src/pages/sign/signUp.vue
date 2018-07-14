@@ -17,9 +17,9 @@
 </template>
 
 <script>
-import {mapState, mapMutations} from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 
-let emailRE = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+let emailRE = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
 export default {
     data() {
@@ -27,7 +27,7 @@ export default {
             formData: {
                 name: '',
                 email: '',
-                pass: '',
+                pass: ''
             },
             ispass: true
         }
@@ -40,69 +40,67 @@ export default {
     computed: {
         validation() {
             return {
-                name: !!this.formData.name.trim() && this.formData.name.trim().length > 5,
+                name: !!this.formData.name.trim() &&
+                    this.formData.name.trim().length > 5,
                 email: emailRE.test(this.formData.email),
-                pass: this.formData.pass.length >= 6 && this.formData.name.length <= 21
+                pass: this.formData.pass.length >= 6 &&
+                    this.formData.name.length <= 21
             }
         },
         isValid() {
             let validation = this.validation
-            return Object.keys(validation).every( (key) => validation[key] )
+            return Object.keys(validation).every(key => validation[key])
         }
     },
     methods: {
-        ...mapMutations([
-            'TRUE_BLOG_ROUTER',
-            'FALSE_BLOG_ROUTER'
-        ]),
+        ...mapMutations(['TRUE_BLOG_ROUTER', 'FALSE_BLOG_ROUTER']),
         register() {
             // if (this.isValid) {
-
             // }
         }
     },
     destroyed() {
-        this.FALSE_BLOG_ROUTER();
+        this.FALSE_BLOG_ROUTER()
     }
 }
 </script>
 
 <style lang="scss" scoped>
-    $color-default: #5C4FB4;
-    $color-green: #52bab3;
-    #sign-up {
-        min-height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: $color-green;
+$color-default: #5c4fb4;
+$color-green: #52bab3;
+#sign-up {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $color-green;
+}
+.form {
+    width: 300px;
+    min-height: 400px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 7px 5px 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid #d8dee2;
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: 300;
     }
-    .form {
-        width: 300px;
-        min-height: 400px;
-        background: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 7px 5px 5px rgba(0, 0, 0, 0.2);
-        border: 1px solid #d8dee2;
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 24px;
-            font-weight: 300;
-        }
-        label {
-            display: block;
-            margin-bottom: 7px;
-        }
-        input {
-            margin-top: 7px;
-            margin-bottom: 15px;
-        }
-        button {
-            width: 100%;
-            margin-top: 15px;
-        }
+    label {
+        display: block;
+        margin-bottom: 7px;
     }
+    input {
+        margin-top: 7px;
+        margin-bottom: 15px;
+    }
+    button {
+        width: 100%;
+        margin-top: 15px;
+    }
+}
 </style>
 

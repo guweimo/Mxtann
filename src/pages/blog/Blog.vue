@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import {mapState, mapMutations} from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 
 export default {
     name: 'Blog',
@@ -42,74 +42,71 @@ export default {
         }
     },
     mounted() {
-        this.TRUE_BLOG_ROUTER();
-        let body = document.querySelector('body');
-        body.className = 'body-no-padding';
+        this.TRUE_BLOG_ROUTER()
+        let body = document.querySelector('body')
+        body.className = 'body-no-padding'
     },
     methods: {
-        ...mapMutations([
-            'TRUE_BLOG_ROUTER',
-            'FALSE_BLOG_ROUTER'
-        ]),
+        ...mapMutations(['TRUE_BLOG_ROUTER', 'FALSE_BLOG_ROUTER'])
     },
     destroyed() {
-        this.FALSE_BLOG_ROUTER();
+        this.FALSE_BLOG_ROUTER()
     }
 }
 </script>
 
 <style lang="scss" scoped>
-    $px-10: 10px;
-    $color-default: #52bab3; // #52bab3
-    $font-color: #fff; // .blog-div {text-align: center;}
+$px-10: 10px;
+$color-default: #52bab3; // #52bab3
+$font-color: #fff; // .blog-div {text-align: center;}
 
-    .blog-div {
-        display: flex;
-        flex-direction: column;
-        background-color: $color-default;
-        min-height: 100%;
-        align-items: center;
-        justify-content: center;
-    }
+.blog-div {
+    display: flex;
+    flex-direction: column;
+    background-color: $color-default;
+    min-height: 100%;
+    align-items: center;
+    justify-content: center;
+}
 
-    .blog-align {
-        h2 {
-            color: $font-color;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-    }
-
-    .blog-ul {
+.blog-align {
+    h2 {
+        color: $font-color;
         text-align: center;
+        margin-bottom: 20px;
+    }
+}
 
-        a {
-            text-decoration: none;
-            color: $font-color;
-        }
+.blog-ul {
+    text-align: center;
 
-        li {
-            display: inline;
+    a {
+        text-decoration: none;
+        color: $font-color;
+    }
 
-            &:not(:last-of-type) {
-                margin-right: $px-10;
+    li {
+        display: inline;
 
-                &::after {
-                    content: '|';
-                    padding-left: $px-10;
-                    color: $font-color;
-                }
+        &:not(:last-of-type) {
+            margin-right: $px-10;
+
+            &::after {
+                content: '|';
+                padding-left: $px-10;
+                color: $font-color;
             }
         }
     }
+}
 
-    .blog-logo {
-        height: 200px;
-        width: 200px;
-        background-image: url("../../assets/picture.jpg");
-        background-repeat: no-repeat;
-        border-radius: 50%;
-        margin-bottom: 20px;
-        border: 4px solid #ccc;
-    }
+.blog-logo {
+    height: 200px;
+    width: 200px;
+    background-image: url('../../assets/picture.jpg');
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 4px solid #ccc;
+}
 </style>
