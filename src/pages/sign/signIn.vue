@@ -1,11 +1,12 @@
 <template>
     <div id="sign-in">
         <div class="form">
-            <form>
+            <form @submit.prevent="loginUser">
                 <h2>登录Mxtan</h2>
                 <label for="login_name">用户名</label>
                 <input type="text" class="form-control input-block" id="login_name" v-model="formData.name">
                 <label for="login_pass">密码</label>
+                <p ng-show="isError"></p>
                 <input type="password" class="form-control input-block" id="login_pass" v-model="formData.pass">
                 <button class="btn btn-default">登录</button>
             </form>
@@ -20,6 +21,7 @@ import { mapState, mapMutations } from 'vuex'
 export default {
     data() {
         return {
+            isError: false,
             formData: {
                 name: '',
                 pass: ''
@@ -32,7 +34,16 @@ export default {
         body.className = 'body-no-padding'
     },
     methods: {
-        ...mapMutations(['TRUE_BLOG_ROUTER', 'FALSE_BLOG_ROUTER'])
+        ...mapMutations(['TRUE_BLOG_ROUTER', 'FALSE_BLOG_ROUTER']),
+        loginUser() {
+            this.$axios.post('/apis/sign/login', formData).then(res => {
+                if (res.data.status == 2001) {
+
+                } else if (res.data.status == 2000) {
+                    
+                }
+            })
+        }
     },
     destroyed() {
         this.FALSE_BLOG_ROUTER()
