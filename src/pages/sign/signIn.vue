@@ -36,7 +36,7 @@ export default {
     methods: {
         ...mapMutations(['TRUE_BLOG_ROUTER', 'FALSE_BLOG_ROUTER']),
         loginUser() {
-            this.$axios.post('/apis/sign/login', formData).then(res => {
+            this.$axios.post('/apis/sign/loginUser', this.formData).then(res => {
                 if (res.data.status == 2001) {
 
                 } else if (res.data.status == 2000) {
