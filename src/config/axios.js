@@ -1,5 +1,10 @@
 import axios from 'axios'
 
+let jsonType = {
+	'Content-Type': 'application/json;charset=UTF-8',
+	'X-Requested-With': 'XMLHttpRequest'
+}
+
 export const request = {
     get(url, data, type) {
         let config = {
@@ -17,9 +22,7 @@ export const request = {
             method: 'POST',
             url: url,
             data: data || {},
-            headers: type || {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            }
+            headers: type || jsonType
         }
         return axios(config);
     }
