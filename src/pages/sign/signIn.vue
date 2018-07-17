@@ -32,6 +32,8 @@ export default {
         this.TRUE_BLOG_ROUTER()
         let body = document.querySelector('body')
         body.className = 'body-no-padding'
+        let app = document.querySelector('#app')
+        app.className = 'h100p'
     },
     methods: {
         ...mapMutations(['TRUE_BLOG_ROUTER', 'FALSE_BLOG_ROUTER']),
@@ -47,6 +49,8 @@ export default {
     },
     destroyed() {
         this.FALSE_BLOG_ROUTER()
+        let app = document.querySelector('#app')
+        app.className = ''
     }
 }
 </script>
