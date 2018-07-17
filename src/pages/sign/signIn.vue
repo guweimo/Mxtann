@@ -4,10 +4,10 @@
             <form @submit.prevent="loginUser">
                 <h2>登录Mxtan</h2>
                 <label for="login_name">用户名</label>
-                <input type="text" class="form-control input-block" id="login_name" v-model="formData.name">
+                <input type="text" class="form-control input-block" id="login_name" v-model="formData.name" @keyup="cancelError">
                 <label for="login_pass">密码</label>
-                <p ng-show="isError"></p>
-                <input type="password" class="form-control input-block" id="login_pass" v-model="formData.pass">
+                <input type="password" class="form-control input-block" id="login_pass" v-model="formData.pass" @keyup="cancelError">
+                <p class="error" ng-show="isError" v-text="errorText"></p>
                 <button class="btn btn-default">登录</button>
             </form>
         </div>
@@ -22,6 +22,7 @@ export default {
     data() {
         return {
             isError: false,
+            errorText: '',
             formData: {
                 name: '',
                 pass: ''
@@ -38,13 +39,32 @@ export default {
     methods: {
         ...mapMutations(['TRUE_BLOG_ROUTER', 'FALSE_BLOG_ROUTER']),
         loginUser() {
+            const tip = this.validation()
+            if (tip) {
+                return false
+            }
+            
             this.$axios.post('/apis/sign/loginUser', this.formData).then(res => {
                 if (res.data.status == 2001) {
-
+                    this.isError = true
+                    this.errorText = res.data.message
                 } else if (res.data.status == 2000) {
-                    
+                    this.$router.go(-1);
                 }
             })
+        },
+        cancelError() {
+            this.errorText = ''
+            this.isError = false
+        },
+        validation() {
+            let tips = false
+            if (this.formData.name || this.formData.pass) {
+                this.isError = true
+                this.errorText = '用户名或密码不能为空！'
+                tips = true
+            }
+            return tips
         }
     },
     destroyed() {
@@ -68,7 +88,7 @@ $color-green: #52bab3;
 }
 .form {
     width: 300px;
-    height: 300px;
+    min-height: 300px;
     border: 1px solid #d8dee2;
     background: #eee;
     border-radius: 1%;
@@ -85,13 +105,16 @@ $color-green: #52bab3;
         display: block;
         margin-bottom: 7px;
     }
-    input {
+    input:first-of-type {
         margin-top: 7px;
         margin-bottom: 15px;
     }
     button {
         width: 100%;
-        margin-top: 15px;
+        margin-top: 25px;
+    }
+    p {
+        margin-top: 5px;
     }
 }
 </style>
