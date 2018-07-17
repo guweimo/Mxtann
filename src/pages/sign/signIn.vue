@@ -59,7 +59,7 @@ export default {
         },
         validation() {
             let tips = false
-            if (this.formData.name || this.formData.pass) {
+            if (this.formData.name == '' || this.formData.pass == '') {
                 this.isError = true
                 this.errorText = '用户名或密码不能为空！'
                 tips = true
