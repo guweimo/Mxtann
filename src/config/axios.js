@@ -24,6 +24,6 @@ export const request = {
             data: data || {},
             headers: type || jsonType
         }
-        return axios(config);
+        return axios(config)
     }
 }
