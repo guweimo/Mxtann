@@ -1,7 +1,9 @@
 import {
     TRUE_BLOG_ROUTER, 
-    FALSE_BLOG_ROUTER
+    FALSE_BLOG_ROUTER,
+    GET_NAV_DATA
 } from './mutation-types'
+import {request} from '@/config/axios'
 
 export default {
     [TRUE_BLOG_ROUTER] (state) {
@@ -9,5 +11,14 @@ export default {
     },
     [FALSE_BLOG_ROUTER] (state) {
         state.isBlogRouter = false
+    },
+    [GET_NAV_DATA] (state) {
+        if (state.navData.length == 0) {
+            request.get('/apis/home/navlist').then(res => {
+                if (res.data.status == 2000) {
+                    state.navData = res.data.data
+                }
+            })
+        }
     }
 }

@@ -6,6 +6,7 @@ Vue.use(Vuex)
 
 const state = {
     isBlogRouter: false,    // 是否是blog路由地址
+    navData: [] //  导航数据
 }
 
 export default new Vuex.Store({

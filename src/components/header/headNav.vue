@@ -4,10 +4,10 @@
             <nav>
                 <ul class="menu">
                     <li id="logo">
-                        <a href="/home">Mxtan</a>
+                        <router-link to="/home">Mxtan</router-link>
                     </li>
                     <li v-for="item in navList" :key="item.title">
-                        <a :href="item.url" v-text="item.title"></a>
+                        <router-link :to="item.url" v-text="item.title">Mxtan</router-link>
                     </li>
                 </ul>
             </nav>

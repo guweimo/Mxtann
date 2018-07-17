@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <head-nav :nav-list="listArr" v-if="!isBlogRouter"></head-nav>
+        <head-nav :nav-list="navData" v-if="!isBlogRouter"></head-nav>
         <router-view/>
         <footer-col v-if="!isBlogRouter"></footer-col>
     </div>
@@ -9,13 +9,13 @@
 <script>
 import headNav from '@/components/header/headNav'
 import footerCol from '@/components/footer/footerCol'
-import { mapState } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 
 export default {
     name: 'App',
     data() {
         return {
-            listArr: []
+            
         }
     },
     components: {
@@ -23,19 +23,13 @@ export default {
         footerCol
     },
     computed: {
-        ...mapState(['isBlogRouter'])
+        ...mapState(['isBlogRouter', 'navData'])
     },
     mounted() {
-        this.getListData()
+        this.GET_NAV_DATA()
     },
     methods: {
-        getListData: function() {
-            this.$axios.get('/apis/home/navlist').then(re => {
-                if (re.data.status == 2000) {
-                    this.listArr = re.data.data
-                }
-            })
-        }
+        ...mapMutations(['GET_NAV_DATA'])
     }
 }
 </script>

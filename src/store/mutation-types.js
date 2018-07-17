@@ -1,2 +1,3 @@
 export const TRUE_BLOG_ROUTER = 'TRUE_BLOG_ROUTER'
 export const FALSE_BLOG_ROUTER = 'FALSE_BLOG_ROUTER'
+export const GET_NAV_DATA = 'GET_NAV_DATA'
