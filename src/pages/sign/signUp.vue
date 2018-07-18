@@ -68,14 +68,14 @@ export default {
         ...mapMutations(['TRUE_BLOG_ROUTER', 'FALSE_BLOG_ROUTER']),
         register() {
             if (this.isValid) {
-                
+                this.$router.replace('/login')
             } else {
-                
+
             }
         },
         validName() {
             this.nameError = ''
-            console.log(this.formData.name)
+            
             if (this.formData.name.trim() == '') {
                 this.nameError = '用户名不能为空'
             } else if (this.formData.name.trim().length < 5  || this.formData.name.trim().length > 20) {
