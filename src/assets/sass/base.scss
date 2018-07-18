@@ -53,6 +53,7 @@ html, body {
 html {
     box-sizing: border-box;
     font-size: 14px;
+    font-family: "Microsoft YaHei", 微软雅黑, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 body {
     padding-top: 45px;
@@ -70,7 +71,7 @@ body {
 }
 
 #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    // font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
