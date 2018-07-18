@@ -3,13 +3,21 @@
         <div class="form">
             <form @submit.prevent="register">
                 <h2>注册</h2>
-                <label for="register_name">用户名</label>
-                <input type="text" class="form-control input-block" id="register_name" v-model="formData.name" required placeholder="请输入用户名">
-                <label for="register_email">邮箱</label>
-                <input type="email" class="form-control input-block" id="register_email" v-model="formData.email" required placeholder="email@email.com">
-                <label for="register_pass">密码</label>
-                <input type="password" class="form-control input-block" id="register_pass" v-model="formData.pass" placeholder="请输入密码" required>
-                <p v-show="!ispass"></p>
+                <div class="register-item">
+                    <label for="register_name">用户名</label>
+                    <input type="text" class="form-control input-block" id="register_name" v-model="formData.name" required placeholder="请输入用户名" @blur="validName" @keyup="keyupName">
+                    <p class="error" v-text="nameError"></p>
+                </div>
+                <div class="register-item">
+                    <label for="register_email">邮箱</label>
+                    <input type="email" class="form-control input-block" id="register_email" v-model="formData.email" required placeholder="email@email.com" @blur="validEmail" @keyup="keyupEmail">
+                    <p class="error" v-text="emailError"></p>
+                </div>
+                <div class="register-item">
+                    <label for="register_pass">密码</label>
+                    <input type="password" class="form-control input-block" id="register_pass" v-model="formData.pass" placeholder="请输入密码" required  @blur="validPass" @keyup="keyupPass">
+                    <p class="error" v-text="passError"></p>
+                </div>
                 <button class="btn btn-default">注册</button>
             </form>
         </div>
@@ -29,7 +37,9 @@ export default {
                 email: '',
                 pass: ''
             },
-            ispass: true
+            nameError: '',
+            emailError: '',
+            passError: ''
         }
     },
     mounted() {
@@ -57,8 +67,39 @@ export default {
     methods: {
         ...mapMutations(['TRUE_BLOG_ROUTER', 'FALSE_BLOG_ROUTER']),
         register() {
-            // if (this.isValid) {
-            // }
+            if (this.isValid) {
+                
+            } else {
+                
+            }
+        },
+        validName() {
+            this.nameError = ''
+            console.log(this.formData.name)
+            if (this.formData.name.trim() == '') {
+                this.nameError = '用户名不能为空'
+            } else if (this.formData.name.trim().length < 5  || this.formData.name.trim().length > 20) {
+                this.nameError = '用户名不能小于5位，大于20位！'
+            } 
+        },
+        validEmail() {
+            if (!emailRE.test(this.formData.email.trim())) {
+                this.emailError = '邮箱格式不正确！'
+            }
+        },
+        validPass() {
+            if (this.formData.pass.length < 6 || this.formData.pass.length > 20) {
+                this.passError = '密码不能小于6位，大于20位！'
+            }
+        },
+        keyupName() {
+            this.nameError = ''
+        },
+        keyupEmail(value) {
+            this.emailError = ''
+        },
+        keyupPass() {
+            this.passError = ''
         }
     },
     destroyed() {
@@ -90,7 +131,7 @@ $color-green: #52bab3;
     h2 {
         text-align: center;
         margin-bottom: 20px;
-        font-size: 24px;
+        font-size: 1.71rem;
         font-weight: 300;
     }
     label {
@@ -99,7 +140,6 @@ $color-green: #52bab3;
     }
     input {
         margin-top: 7px;
-        margin-bottom: 15px;
     }
     button {
         width: 100%;

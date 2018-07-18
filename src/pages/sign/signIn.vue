@@ -111,10 +111,11 @@ $color-green: #52bab3;
     }
     button {
         width: 100%;
-        margin-top: 25px;
+        // margin-top: 25px;
+        margin-top: 0.285rem;
     }
     p {
-        margin-top: 5px;
+        margin-top: 0.357rem;
     }
 }
 </style>
