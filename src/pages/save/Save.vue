@@ -1,6 +1,22 @@
 <template>
     <div class="container">
-        <mavon-editor v-model="formData.marktext" :toolbars="toolbar" @change="obtainHTML"></mavon-editor>
+        <div class="form-content">
+            <form>
+                <h2>新建博文</h2>
+                <div class="form-group">
+                    <label class="form-top-item"><span class="form-star">*</span>标题</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label class="form-top-item"><span class="form-star">*</span>内容</label>
+                    <mavon-editor class="form-bottom-item" v-model="formData.marktext" :toolbars="toolbar" @change="obtainHTML"></mavon-editor>
+                </div>
+                <div class="form-bottom">
+                    <button class="btn btn-cancel">取消</button>
+                    <button class="btn btn-default">提交</button>
+                </div>
+            </form>
+        </div>
     </div>
 </template>
 
@@ -64,5 +80,43 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="scss" scoped>
+    .form-content {
+        width: 75%;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 50px;
+        border-radius: 5px;
+        box-shadow: 5px 7px 15px rgba(0, 0, 0, 0.3);
+        h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    }
+    .form-group {
+        margin-bottom: 10px;
+        label {
+            display: block;
+        }
+        .form-top-item {
+            margin-bottom: 10px;
+        }
+        input {
+            display: block;
+            width: 100%;
+        }
+        .form-star {
+            color: red;
+            padding-right: 2px;
+            vertical-align: middle;
+            font-family: verdana;
+        }
+    }
+    .form-bottom {
+        text-align: center;
+        margin-top: 30px;
+        button:first-of-type {
+            margin-right: 50px;
+        }
+    }
 </style>
