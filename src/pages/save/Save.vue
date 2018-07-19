@@ -12,8 +12,8 @@
                     <mavon-editor class="form-bottom-item" v-model="formData.marktext" :toolbars="toolbar" @change="obtainHTML"></mavon-editor>
                 </div>
                 <div class="form-bottom">
-                    <button class="btn btn-cancel">取消</button>
-                    <button class="btn btn-default">提交</button>
+                    <button type="button" class="btn btn-cancel" @click="cancel">取消</button>
+                    <button type="button" class="btn btn-default" @click="saveArticle">提交</button>
                 </div>
             </form>
         </div>
@@ -75,6 +75,12 @@ export default {
     methods: {
         obtainHTML(text, html) {
             this.formData.description = html
+        },
+        cancel() {
+            this.$router.replace('/home')
+        },
+        saveArticle() {
+            // this.$axios.post('')
         }
     }
 }
@@ -82,7 +88,7 @@ export default {
 
 <style lang="scss" scoped>
     .form-content {
-        width: 75%;
+        width: 80%;
         margin: 0 auto;
         background-color: #fff;
         padding: 50px;
