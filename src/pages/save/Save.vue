@@ -5,7 +5,7 @@
                 <h2>新建博文</h2>
                 <div class="form-group">
                     <label class="form-top-item"><span class="form-star">*</span>标题</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" v-model="formData.title">
                 </div>
                 <div class="form-group">
                     <label class="form-top-item"><span class="form-star">*</span>内容</label>
@@ -33,7 +33,8 @@ export default {
         return {
             formData: {
                 marktext: '',
-                description: ''
+                description: '',
+                title: ''
             },
             toolbar: {
                 bold: true, // 粗体
@@ -80,7 +81,13 @@ export default {
             this.$router.replace('/home')
         },
         saveArticle() {
-            // this.$axios.post('')
+            this.$axios.post('/apis/home/addArticle', {
+                title: this.formData.title.trim(),
+                marktext: this.formData.marktext,
+                description: this.formData.description
+            }).then(function(re) {
+                
+            })
         }
     }
 }
