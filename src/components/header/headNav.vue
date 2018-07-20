@@ -40,7 +40,7 @@ export default {
     width: 100%;
     background-color: #333;
     box-shadow: 0 3px 3px -2px hsla(0, 0%, 0%, 0.13);
-    z-index: 10;
+    z-index: 2333;
     .container {
         margin-top: 0;
     }
