@@ -9,6 +9,9 @@
                     <li v-for="item in navList" :key="item.title">
                         <router-link :to="item.url" v-text="item.title">Mxtan</router-link>
                     </li>
+                    <li>
+                        <button class="btn btn-default" @click="gotoSave">发布</button>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -25,6 +28,11 @@ export default {
     },
     data() {
         return {}
+    },
+    methods: {
+        gotoSave() {
+            this.$router.push('/save')
+        }
     }
 }
 </script>
@@ -50,6 +58,10 @@ export default {
     display: flex;
     li {
         margin: 0 10px;
+        vertical-align: middle;
+        &:last-of-type {
+            margin-left: auto;
+        }
     }
     a {
         display: block;
@@ -60,6 +72,7 @@ export default {
         }
     }
 }
+
 
 #logo {
     a {
