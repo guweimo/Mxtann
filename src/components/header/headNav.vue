@@ -11,6 +11,8 @@
                     </li>
                     <li>
                         <button class="btn btn-default" @click="gotoSave">发布</button>
+                        <router-link to="/login">登录</router-link>
+                        <router-link to="/register">注册</router-link>
                     </li>
                 </ul>
             </nav>
