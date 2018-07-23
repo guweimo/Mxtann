@@ -69,6 +69,8 @@ export default {
     },
     destroyed() {
         this.FALSE_BLOG_ROUTER()
+        let body = document.querySelector('body')
+        body.className = ''
         let app = document.querySelector('#app')
         app.className = ''
     }
