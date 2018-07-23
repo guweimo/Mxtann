@@ -9,10 +9,17 @@
                     <li v-for="item in navList" :key="item.title">
                         <router-link :to="item.url" v-text="item.title">Mxtan</router-link>
                     </li>
+                    <li class="search">
+                        <input type="text" class="form-control" placeholder="请搜索博文">
+                    </li>
                     <li>
                         <button class="btn btn-default" @click="gotoSave">发布</button>
-                        <router-link to="/login">登录</router-link>
-                        <router-link to="/register">注册</router-link>
+                    </li>
+                    <li>
+                        <div class="sign">
+                            <router-link to="/login" class="a-inline">登录</router-link>
+                            <router-link to="/register" class="a-inline">注册</router-link>
+                        </div>
                     </li>
                 </ul>
             </nav>
@@ -58,11 +65,19 @@ export default {
 
 .menu {
     display: flex;
+    align-items: center;
     li {
         margin: 0 10px;
         vertical-align: middle;
         &:last-of-type {
             margin-left: auto;
+        }
+        & input {
+            background: #eee;
+            display: block;
+        }
+        &.search {
+            margin-left: 20px;
         }
     }
     a {
@@ -71,6 +86,9 @@ export default {
         padding: 0 10px;
         &:hover {
             color: #fff;
+        }
+        &.a-inline {
+            display: inline-block;
         }
     }
 }
