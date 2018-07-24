@@ -16,9 +16,13 @@
                         <button class="btn btn-default" @click="gotoSave">发布</button>
                     </li>
                     <li>
-                        <div class="sign">
+                        <div class="sign" v-if="false">
                             <router-link to="/login" class="a-inline">登录</router-link>
                             <router-link to="/register" class="a-inline">注册</router-link>
+                        </div>
+                        <div class="user-info">
+                            <img class="avatar" height="20" width="20">
+                            <span class="dropdown-caret"></span>
                         </div>
                     </li>
                 </ul>
@@ -50,7 +54,8 @@ export default {
 #header {
     color: #fff;
     height: 45px;
-    line-height: 45px;
+    display: flex;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
@@ -90,6 +95,27 @@ export default {
         &.a-inline {
             display: inline-block;
         }
+    }
+}
+
+.user-info {
+    .dropdown-caret {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        vertical-align: middle;
+        content: "";
+        border: 4px solid;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+        margin-top: 5px;
+    }
+    
+    .avatar {
+        vertical-align: middle;
+        margin-right: 3px;
+        border-radius: 4px;
     }
 }
 
