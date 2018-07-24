@@ -6,10 +6,12 @@ import markPreview from '@/pages/preview/markPreview'
 import Home from '@/pages/home/home'
 import signIn from '@/pages/sign/signIn'
 import signUp from '@/pages/sign/signUp'
+import error from '@/pages/error/error'
+import notFound from '@/pages/error/404'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
     mode: 'history',
     routes: [
         { path: '/', component: Blog },
@@ -18,5 +20,23 @@ export default new Router({
         { path: '/home', component: Home },
         { path: '/login', component: signIn },
         { path: '/register', component: signUp },
+        { 
+            path: '/error', 
+            component: error, 
+            children: [
+                { path: '404', component: notFound }
+            ]
+        }
     ]
 })
+
+router.beforeEach((to, from, next) => {
+    // 判断是否匹配到路由，如果不匹配则跳转到home路由，反则继续跳转到当前的路由
+    if (to.matched.length == 0) {
+        from.name ? next({name: from.name}) : next('/error/404') 
+    } else {
+        next()
+    }
+})
+
+export default router
