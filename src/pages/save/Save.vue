@@ -8,6 +8,13 @@
                     <input type="text" class="form-control" v-model="formData.title">
                 </div>
                 <div class="form-group">
+                    <label class="form-top-item"><span class="form-star">*</span>类型</label>
+                    <select class="form-bottom-item form-control" v-model="formData.type">
+                        <option disabled value="">请选择</option>
+                        <option v-for="item in navData" :key="item.n_id" :value="item.n_id" v-text="item.title"></option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label class="form-top-item"><span class="form-star">*</span>内容</label>
                     <mavon-editor class="form-bottom-item" v-model="formData.marktext" :toolbars="toolbar" @change="obtainHTML"></mavon-editor>
                 </div>
@@ -21,8 +28,9 @@
 </template>
 
 <script>
-import {mavonEditor} from 'mavon-editor'
+import { mavonEditor } from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
+import { mapState, mapMutations } from 'vuex'
 
 export default {
     name: 'Save',
@@ -34,7 +42,8 @@ export default {
             formData: {
                 marktext: '',
                 description: '',
-                title: ''
+                title: '',
+                type: ''
             },
             toolbar: {
                 bold: true, // 粗体
@@ -73,6 +82,9 @@ export default {
             }
         }
     },
+    computed: {
+        ...mapState(['navData'])
+    },
     methods: {
         obtainHTML(text, html) {
             this.formData.description = html
@@ -81,12 +93,9 @@ export default {
             this.$router.replace('/home')
         },
         saveArticle() {
-            this.$axios.post('/apis/home/addArticle', {
-                title: this.formData.title.trim(),
-                marktext: this.formData.marktext,
-                description: this.formData.description
-            }).then(function(re) {
-                
+            this.formData.title = this.formData.title.trim()
+            this.$axios.post('/apis/home/addArticle', this.formData).then(function(re) {
+
             })
         }
     }
@@ -115,6 +124,10 @@ export default {
             margin-bottom: 10px;
         }
         input {
+            display: block;
+            width: 100%;
+        }
+        select {
             display: block;
             width: 100%;
         }
