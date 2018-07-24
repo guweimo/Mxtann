@@ -18,7 +18,7 @@
                             </div>
                             <div class="body-content">
                                 <div class="">
-                                    <p v-text="item.description"></p>
+                                    <p v-html="item.description"></p>
                                 </div>
                             </div>
                         </div>
