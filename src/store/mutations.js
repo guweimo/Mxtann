@@ -1,7 +1,8 @@
 import {
     TRUE_BLOG_ROUTER, 
     FALSE_BLOG_ROUTER,
-    GET_NAV_DATA
+    GET_NAV_DATA,
+    SELECT_TYPE
 } from './mutation-types'
 import {request} from '@/config/axios'
 
@@ -20,5 +21,8 @@ export default {
                 }
             })
         }
+    },
+    [SELECT_TYPE](state, type) {
+        state.selectType = type
     }
 }

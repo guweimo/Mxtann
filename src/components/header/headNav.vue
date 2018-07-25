@@ -7,7 +7,7 @@
                         <router-link to="/home">Mxtan</router-link>
                     </li>
                     <li v-for="item in navList" :key="item.title">
-                        <router-link :to="item.url" v-text="item.title">Mxtan</router-link>
+                        <router-link :to="item.url" v-text="item.title" :class="{select: selectType==(item.title).toLowerCase() }">Mxtan</router-link>
                     </li>
                     <li class="search">
                         <input type="text" class="form-control" placeholder="请搜索博文">
@@ -32,6 +32,8 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex'
+
 export default {
     props: {
         navList: {
@@ -41,6 +43,9 @@ export default {
     },
     data() {
         return {}
+    },
+    computed: {
+        ...mapState(['selectType'])
     },
     methods: {
         gotoSave() {
@@ -95,6 +100,9 @@ export default {
         &.a-inline {
             display: inline-block;
         }
+        &.select {
+            color: #fff;
+        }
     }
 }
 
@@ -122,7 +130,8 @@ export default {
 
 #logo {
     a {
-        color: #fff;
+        color: #69e4dc;
+        font-weight: bold;
     }
 }
 </style>

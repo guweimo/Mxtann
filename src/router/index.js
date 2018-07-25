@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import { mapMutations } from 'vuex'
 import Blog from '@/pages/blog/Blog'
 import Save from '@/pages/save/Save'
 import markPreview from '@/pages/preview/markPreview'
@@ -43,6 +44,9 @@ router.beforeEach((to, from, next) => {
     } else {
         next()
     }
+
+    const type = to.path.replace(/\//ig, '')
+    router.app.$options.store.state.selectType = type
 })
 
 export default router
