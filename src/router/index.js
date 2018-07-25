@@ -8,6 +8,9 @@ import signIn from '@/pages/sign/signIn'
 import signUp from '@/pages/sign/signUp'
 import error from '@/pages/error/error'
 import notFound from '@/pages/error/404'
+import jsList from '@/pages/type/jsList'
+import cssList from '@/pages/type/cssList'
+import vueList from '@/pages/type/vueList'
 
 Vue.use(Router)
 
@@ -26,7 +29,10 @@ const router = new Router({
             children: [
                 { path: '404', component: notFound }
             ]
-        }
+        },
+        { path: '/javascript', component: jsList },
+        { path: '/css', component: cssList },
+        { path: '/vue', component: vueList }
     ]
 })
 
