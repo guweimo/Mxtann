@@ -23,23 +23,47 @@
                     </div>
                 </div>
             </div>
-            <div class="main-wrap">
-                <div></div>
+            <div class="main-not-content" v-if="articleData.length == 0" :style="styleObj">
+                <div>
+                    暂无内容
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+let resizeFn = null
+
 export default {
     data() {
-        return {}
+        return {
+            styleObj: {
+                height: ''
+            }
+        }
     },
     props: {
         articleData: {
             type: Array,
             default: []
         }
+    },
+    mounted() {
+        this.obtainWinHeight()
+        resizeFn = () => {
+            this.obtainWinHeight()
+        }
+        window.addEventListener('resize', resizeFn)
+    },
+    methods: {
+        obtainWinHeight() {
+            let wH = window.innerHeight
+            this.styleObj.height = `${wH-85}px`
+        }
+    },
+    destroyed() {
+        window.removeEventListener('resize', resizeFn)
     }
 }
 </script>
@@ -77,6 +101,18 @@ export default {
     color: #ccc;
     padding-bottom: 5px;
     border-bottom: 1px dashed #ddd;
+}
+
+.main-not-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.2);
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(216, 38, 106);
 }
 </style>
 
