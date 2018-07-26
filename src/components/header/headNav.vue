@@ -56,8 +56,7 @@ export default {
             this.$router.push('/save')
         },
         searchTitle($event) {
-            console.log(this.searchData.title)
-            this.$router.push({ path: '/search', params: {title: this.searchData.title} })
+            this.$router.push(`/search/${this.searchData.title}`)
         }
     }
 }
