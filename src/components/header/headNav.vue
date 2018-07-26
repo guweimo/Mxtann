@@ -10,7 +10,7 @@
                         <router-link :to="item.url" v-text="item.title" :class="{select: selectType==(item.title).toLowerCase() }">Mxtan</router-link>
                     </li>
                     <li class="search">
-                        <input type="text" class="form-control" placeholder="请搜索博文">
+                        <input type="text" class="form-control" v-model="searchData.title" placeholder="请搜索博文" @keyup.13="searchTitle">
                     </li>
                     <li>
                         <button class="btn btn-default" @click="gotoSave">发布</button>
@@ -42,7 +42,11 @@ export default {
         }
     },
     data() {
-        return {}
+        return {
+            searchData: {
+                title: ''
+            }
+        }
     },
     computed: {
         ...mapState(['selectType'])
@@ -50,6 +54,10 @@ export default {
     methods: {
         gotoSave() {
             this.$router.push('/save')
+        },
+        searchTitle($event) {
+            console.log(this.searchData.title)
+            this.$router.push({ path: '/search', params: {title: this.searchData.title} })
         }
     }
 }

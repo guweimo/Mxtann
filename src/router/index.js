@@ -12,6 +12,7 @@ import notFound from '@/pages/error/404'
 import jsList from '@/pages/type/jsList'
 import cssList from '@/pages/type/cssList'
 import vueList from '@/pages/type/vueList'
+import search from '@/pages/type/search'
 
 Vue.use(Router)
 
@@ -33,7 +34,8 @@ const router = new Router({
         },
         { path: '/javascript', component: jsList },
         { path: '/css', component: cssList },
-        { path: '/vue', component: vueList }
+        { path: '/vue', component: vueList },
+        { path: '/search/:title', component: search }
     ]
 })
 

@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="col-main">
-            <div class="main-wrap" v-if="articleData.result.length > 0">
+            <div class="main-wrap" v-if="articleData.result && articleData.result.length > 0">
                 <div class="page-content" v-for="item in articleData.result" :key="item.id">
                     <div class="article">
                         <h1>
@@ -24,8 +24,7 @@
                 </div>
             </div>
             <div class="main-not-content" v-if="articleData.result && articleData.result.length == 0" :style="styleObj">
-                <div>
-                    暂无内容
+                <div v-text="notDataText">
                 </div>
             </div>
         </div>
@@ -45,8 +44,12 @@ export default {
     },
     props: {
         articleData: {
-            type: Array,
-            default: []
+            type: Object,
+            default: {}
+        },
+        notDataText: {
+            type: String,
+            default: '暂无内容'
         }
     },
     mounted() {
