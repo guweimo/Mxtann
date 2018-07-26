@@ -1,8 +1,8 @@
 <template>
     <div class="container">
         <div class="col-main">
-            <div class="main-wrap" v-if="articleData.length > 0">
-                <div class="page-content" v-for="item in articleData" :key="item.id">
+            <div class="main-wrap" v-if="articleData.result.length > 0">
+                <div class="page-content" v-for="item in articleData.result" :key="item.id">
                     <div class="article">
                         <h1>
                             <a v-text="item.title"></a>
@@ -23,7 +23,7 @@
                     </div>
                 </div>
             </div>
-            <div class="main-not-content" v-if="articleData.length == 0" :style="styleObj">
+            <div class="main-not-content" v-if="articleData.result && articleData.result.length == 0" :style="styleObj">
                 <div>
                     暂无内容
                 </div>
