@@ -1,6 +1,6 @@
 <template>
     <main>
-        <article-list :articleData="list"></article-list>
+        <article-list :articleData="list" not-data-text="未找到搜索内容"></article-list>
     </main>
 </template>
 
@@ -27,8 +27,10 @@ export default {
         search(title) {
             this.$axios.post('/apis/home/searchArticle', {
                 title: title || this.$route.params.title
-            }).then(function (res) {
-
+            }).then( (res) => {
+                if (res.data.status == 2000) {
+                    this.list = res.data.data
+                }
             })
         }
     }
