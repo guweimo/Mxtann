@@ -33,6 +33,7 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex'
+import Bus from '@/config/bus'
 
 export default {
     props: {
@@ -51,12 +52,21 @@ export default {
     computed: {
         ...mapState(['selectType'])
     },
+    mounted() {
+        this.setTitle()
+    },
     methods: {
         gotoSave() {
             this.$router.push('/save')
         },
         searchTitle($event) {
+            Bus.$emit('searchTitle', this.searchData.title)
             this.$router.push(`/search/${this.searchData.title}`)
+        },
+        setTitle() {
+            if (this.$route.path.indexOf('/search/') > -1) {
+                this.searchData.title = this.$route.params.title
+            }
         }
     }
 }
