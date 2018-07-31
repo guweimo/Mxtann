@@ -1,7 +1,7 @@
 <template>
     <div class="aritcle-detail">
         <div class="content">
-            <div class="markdown-body">
+            <div class="markdown-body" v-html="detailData.content">
 
             </div>
         </div>
@@ -13,7 +13,14 @@ import 'mavon-editor/dist/css/index.css'
 
 export default {
     data() {
-        return {}
+        return {
+            detailData: {
+                title: '',
+                content: '',
+                author: '',
+                datetime: ''
+            }
+        }
     }
 }
 </script>
