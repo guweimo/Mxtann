@@ -12,9 +12,13 @@ export const setStore = (name, content) => {
 /**
  * 获取localStorage
  */
-export const getStore = name => {
+export const getStore = (name, isConversion=false) => {
     if (!name) return;
-    return window.localStorage.getItem(name)
+    let result = window.localStorage.getItem(name);
+    if (isConversion) {
+        result = JSON.parse(result)
+    }
+    return result
 }
 
 /**
@@ -39,9 +43,13 @@ export const removeStore = name => {
 /**
  * 获取sessionStorage
  */
-export const getSession = name => {
+export const getSession = (name, isConversion=false) => {
     if (!name) return;
-    return window.sessionStorage.getItem(name)
+    let result = window.sessionStorage.getItem(name)
+    if (isConversion) {
+        result = JSON.parse(result)
+    }
+    return result
 }
 
 /**
