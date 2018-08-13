@@ -17,12 +17,12 @@ export const request = {
         }
         return axios(config)
     },
-    post(url, data, type) {
+    post(url, data, type=jsonType) {
         let config = {
             method: 'POST',
             url: url,
             data: data || {},
-            headers: type || jsonType
+            headers: type
         }
         return axios(config)
     }
