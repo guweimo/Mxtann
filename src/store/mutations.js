@@ -18,10 +18,10 @@ export default {
     },
     [GET_NAV_DATA] (state) {
         let navlist = getStore(navName, true)
-        if (navlist != null) {
-            state.navData = navlist
-        }
         if (state.navData.length == 0) {
+            if (navlist != null) {
+                state.navData = navlist
+            }
             request.get('/apis/home/navlist').then(res => {
                 if (res.data.status == 2000) {
                     setStore(navName, res.data.data)
