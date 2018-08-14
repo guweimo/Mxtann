@@ -13,6 +13,7 @@ import jsList from '@/pages/type/jsList'
 import cssList from '@/pages/type/cssList'
 import vueList from '@/pages/type/vueList'
 import search from '@/pages/type/search'
+import detail from '@/pages/detail/detail'
 
 Vue.use(Router)
 
@@ -35,7 +36,8 @@ const router = new Router({
         { path: '/javascript', component: jsList },
         { path: '/css', component: cssList },
         { path: '/vue', component: vueList },
-        { path: '/search/:title', component: search }
+        { path: '/search/:title', component: search },
+        { path: '/article/:id', component: detail }
     ]
 })
 

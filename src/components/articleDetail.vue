@@ -1,7 +1,7 @@
 <template>
     <div class="aritcle-detail">
         <div class="title">
-            <h2></h2>
+            <h1 v-text="detailData.title"></h1>
         </div>
         <div class="content">
             <div class="markdown-body" v-html="detailData.content">
@@ -16,13 +16,12 @@ import 'mavon-editor/dist/css/index.css'
 
 export default {
     data() {
-        return {
-            detailData: {
-                title: '',
-                content: '',
-                author: '',
-                datetime: ''
-            }
+        return {}
+    },
+    props: {
+        detailData: {
+            type: Object,
+            default: {}
         }
     }
 }
@@ -32,7 +31,10 @@ export default {
 <style lang="scss" scoped>
 .aritcle-detail {
     .title {
-
+        text-align: center;
+    }
+    .content {
+        margin: 20px 0;
     }
 }
 </style>
