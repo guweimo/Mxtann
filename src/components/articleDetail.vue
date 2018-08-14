@@ -1,5 +1,8 @@
 <template>
     <div class="aritcle-detail">
+        <div class="title">
+            <h2></h2>
+        </div>
         <div class="content">
             <div class="markdown-body" v-html="detailData.content">
 
@@ -27,6 +30,10 @@ export default {
 
 
 <style lang="scss" scoped>
+.aritcle-detail {
+    .title {
 
+    }
+}
 </style>
 
