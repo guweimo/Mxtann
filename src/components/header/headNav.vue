@@ -7,7 +7,7 @@
                         <router-link to="/home">Mxtan</router-link>
                     </li>
                     <li v-for="item in navList" :key="item.title">
-                        <router-link :to="item.url" v-text="item.title" :class="{select: selectType==(item.title).toLowerCase() }">Mxtan</router-link>
+                        <router-link :to="item.url" v-text="item.title" :class="{select: selectType==(item.title).toLowerCase() }"></router-link>
                     </li>
                     <li class="search">
                         <input type="text" class="form-control" v-model="searchData.title" placeholder="请搜索博文" @keyup.13="searchTitle">

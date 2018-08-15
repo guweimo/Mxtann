@@ -5,7 +5,9 @@
                 <div class="page-content" v-for="item in articleData.result" :key="item.id">
                     <div class="article">
                         <h1>
-                            <a v-text="item.title"></a>
+                            <!-- <a v-text="item.title" ></a> -->
+                            <router-link v-text="item.title" :to="{name: 'article', params: {id: item.id}}"></router-link>
+                            
                         </h1>
                         <div class="article-header">
                             <div class="">

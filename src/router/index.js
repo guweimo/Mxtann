@@ -37,7 +37,7 @@ const router = new Router({
         { path: '/css', component: cssList },
         { path: '/vue', component: vueList },
         { path: '/search/:title', component: search },
-        { path: '/article/:id', component: detail }
+        { name: 'article', path: '/article/:id', component: detail }
     ]
 })
 

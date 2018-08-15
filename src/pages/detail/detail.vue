@@ -17,6 +17,22 @@ export default {
         return {
             detailData: {}
         }
+    },
+    mounted() {
+        this.obtionDetailData()
+    },
+    methods: {
+        obtionDetailData() {
+            this.$axios.get('/apis/article/detail', {
+                id: this.$route.params.id
+            }).then(res => {
+                if (res.data.status === 2000) {
+                    this.detailData = res.data.data
+                } else {
+                    this.$router.replace('/error/404')
+                }
+            })
+        }
     }
 }
 </script>
