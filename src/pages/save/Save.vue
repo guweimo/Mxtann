@@ -120,7 +120,9 @@ export default {
         saveArticle() {
             this.formData.title = this.formData.title.trim()
             this.$axios.post('/apis/home/addArticle', this.formData).then(res => {
-
+                if (res.data.status === 2000) {
+                    this.$router.replace(`/article/${res.data.data}`)
+                }
             })
         }
     }
