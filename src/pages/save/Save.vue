@@ -145,4 +145,10 @@ export default {
             margin-right: 50px;
         }
     }
+    @media screen and (max-width: 768px) {
+        .form-content {
+            width: 100%;
+            padding: 10px;
+        }
+    }
 </style>
