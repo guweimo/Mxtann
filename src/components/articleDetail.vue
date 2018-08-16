@@ -52,8 +52,8 @@ export default {
         color: #ccc;
         border-bottom: 1px dashed #ccc;
         padding-bottom: 5px;
-        font-size: 14px;
-        display: felx;
+        font-size: 0.929rem;
+        display: flex;
     }
 }
 </style>
