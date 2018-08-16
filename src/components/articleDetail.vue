@@ -32,6 +32,9 @@ export default {
 .aritcle-detail {
     .title {
         text-align: center;
+        h1 {
+            color: #29B4F0;
+        }
     }
     .content {
         margin: 20px 0;
