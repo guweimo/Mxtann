@@ -16,7 +16,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-top-item"><span class="form-star">*</span>内容</label>
-                    <mavon-editor class="form-bottom-item" v-model="formData.marktext" :toolbars="toolbar" @change="obtainHTML"></mavon-editor>
+                    <mavon-editor class="form-bottom-item" v-model="formData.marktext" :subfield="this.bars.subfield" :toolbars="bars" @change="obtainHTML"></mavon-editor>
                 </div>
                 <div class="form-bottom">
                     <button type="button" class="btn btn-cancel" @click="cancel">取消</button>
@@ -79,13 +79,38 @@ export default {
                 /* 2.2.1 */
                 subfield: true, // 单双栏模式
                 preview: true, // 预览
-            }
+            },
+            bars: {}
+        }
+    },
+    created() {
+        this.sizeToStatus()
+        window.onresize = () => {
+            this.sizeToStatus()
         }
     },
     computed: {
         ...mapState(['navData'])
     },
     methods: {
+        sizeToStatus() {
+            let matches = window.matchMedia("(max-width:768px)").matches
+            if (matches) {
+                this.bars = {
+                    bold: true, // 粗体
+                    italic: true, // 斜体
+                    strikethrough: true, // 中划线
+                    navigation: true, // 导航目录
+                    undo: true, // 上一步
+                    redo: true, // 下一步
+                    trash: true, // 清空
+                    subfield: false,
+                    preview: true,
+                }
+            } else {
+                this.bars = this.toolbar
+            }
+        },
         obtainHTML(text, html) {
             this.formData.description = html
         },
@@ -94,7 +119,7 @@ export default {
         },
         saveArticle() {
             this.formData.title = this.formData.title.trim()
-            this.$axios.post('/apis/home/addArticle', this.formData).then(function(re) {
+            this.$axios.post('/apis/home/addArticle', this.formData).then(res => {
 
             })
         }
@@ -149,6 +174,9 @@ export default {
         .form-content {
             width: 100%;
             padding: 10px;
+        }
+        .form-bottom {
+            margin-top: 15px;
         }
     }
 </style>
