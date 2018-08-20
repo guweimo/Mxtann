@@ -5,9 +5,11 @@ import App from './App'
 import router from './router'
 import store from './store/'
 import {request} from './config/axios'
+import messageVue from './components/message/index'
 
 Vue.config.productionTip = false
 Vue.prototype.$axios = request
+Vue.use(messageVue)
 
 /* eslint-disable no-new */
 new Vue({
