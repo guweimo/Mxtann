@@ -118,12 +118,40 @@ export default {
             this.$router.replace('/home')
         },
         saveArticle() {
+            let isbol = this.verifyform()
+            if (!isbol) return;
             this.formData.title = this.formData.title.trim()
             this.$axios.post('/apis/home/addArticle', this.formData).then(res => {
                 if (res.data.status === 2000) {
                     this.$router.replace(`/article/${res.data.data}`)
+                } else {
+                    this.$message({
+                        type: 'error',
+                        content: res.data.message
+                    })
                 }
             })
+        },
+        verifyform() {
+            let isbol = true
+            let message = ''
+            if (this.formData.title === undefined || this.formData.title.trim() === '') {
+                message = '标题不能为空！'
+                isbol = false
+            } else if(this.formData.type === '') {
+                message = '请选择类型！'
+                isbol = false
+            } else if (this.formData.marktext === '') {
+                message = '内容不能为空！'
+                isbol =  false
+            }
+            if (message !== '') {
+                this.$message({
+                    type: 'error',
+                    content: message
+                })
+            }
+            return isbol
         }
     }
 }
