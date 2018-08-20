@@ -11,12 +11,13 @@ const defaults = {
 const messageVueConstructor = Vue.extend(messageVue)
 
 messageVueConstructor.prototype.close = function() {
-    this.$on('after-leave', () => {
+    // 重写过渡效果结束方法
+    this.afterLeave = () => {
         if (this.$el && this.$el.parentNode) {
             this.$el.parentNode.removeChild(this.$el)
         }
         this.$destroy()
-    })
+    }
     this.show = false
 }
 
@@ -34,7 +35,7 @@ const messageBox = (options = {}) => {
     Vue.nextTick(() => {
         instance.show = true
         setTimeout(() => {
-           instance.close() 
+           instance.close()
         }, options.duration);
     })
 

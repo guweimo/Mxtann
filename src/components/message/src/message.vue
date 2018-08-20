@@ -1,5 +1,5 @@
 <template>
-    <transition name="mei-message-fade">
+    <transition name="mei-message-fade" @after-leave="afterLeave">
         <div v-if="show" :class="[
         'mei-message',
         type? `mei-message-${ type }` : '']">
@@ -29,6 +29,11 @@ export default {
             return this.type
                 ? `mei-message-icon mei-icon-${typeMap[this.type]}`
                 : ''
+        }
+    },
+    methods: {
+        // 绑定过渡效果结束
+        afterLeave() {
         }
     }
 }
