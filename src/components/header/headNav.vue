@@ -57,7 +57,11 @@ export default {
     },
     methods: {
         gotoSave() {
-            this.$router.push('/save')
+            // this.$router.push('/save')
+            this.$message({
+                type: 'success',
+                content: 'dfadafdaf'
+            })
         },
         searchTitle($event) {
             Bus.$emit('searchTitle', this.searchData.title)

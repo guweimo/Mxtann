@@ -4,13 +4,13 @@ import messageVue from './message'
 const defaults = {
     show: false,
     content: '',
-    duration: '3000',
+    duration: 3000,
     type: ''
 }
 
 const messageVueConstructor = Vue.extend(messageVue)
 
-messageVueConstructor.prototype.close = () => {
+messageVueConstructor.prototype.close = function() {
     this.$on('after-leave', () => {
         if (this.$el && this.$el.parentNode) {
             this.$el.parentNode.removeChild(this.$el)

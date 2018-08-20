@@ -38,18 +38,21 @@ export default {
     .mei-message {
         position: fixed;
         left: 50%;
-        top: 20px;
+        top: 50px;
         border-radius: 4px;
         min-width: 300px;
         transform: translateX(-50%);
         background-color: #edf2fc;
         transition: opacity .3s, transform .4s;
         overflow: hidden;
-        padding: 15px 15px 15px 20px;
+        padding: 15px;
+        z-index: 2334;
+        box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+        text-align: center;
     }
 
     .mei-message-success {
-        background-color: rab(87, 161, 87);
+        background-color: #83dc73;
         color: #fff;
     }
 
@@ -69,10 +72,7 @@ export default {
     }
 
     .mei-message-con {
-        line-height: 40px;
-        height: 40px;
         display: inline-block;
-        margin-left: 10px;
     }
 
     .mei-message-fade-enter-active {
