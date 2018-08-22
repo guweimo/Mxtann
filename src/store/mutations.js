@@ -2,7 +2,8 @@ import {
     TRUE_BLOG_ROUTER, 
     FALSE_BLOG_ROUTER,
     GET_NAV_DATA,
-    SELECT_TYPE
+    SELECT_TYPE,
+    GET_USERINFO
 } from './mutation-types'
 import {request} from '@/config/axios'
 import { setStore, getStore } from '@/config/unit'
@@ -32,5 +33,15 @@ export default {
     },
     [SELECT_TYPE](state, type) {
         state.selectType = type
+    },
+    [GET_USERINFO](state, info) {
+        if (state.userInfo && (state.userInfo.username !== info.username)) {
+			return;
+		}
+		if (!info.message) {
+			state.userInfo = {...info};
+		} else {
+			state.userInfo = null;
+		}
     }
 }
