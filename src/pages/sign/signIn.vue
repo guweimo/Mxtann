@@ -16,6 +16,7 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex'
+import { setStore } from '@/config/unit'
 
 // 登录
 export default {
@@ -49,7 +50,8 @@ export default {
                     this.isError = true
                     this.errorText = res.data.message
                 } else if (res.data.status == 2000) {
-                    this.$router.go(-1);
+                    setStore(res.data.data)
+                    this.$router.go(-1)
                 }
             })
         },
