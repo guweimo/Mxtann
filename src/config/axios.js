@@ -5,6 +5,12 @@ let jsonType = {
 	'X-Requested-With': 'XMLHttpRequest'
 }
 
+axios.interceptors.response.use(function(config) {
+    return config
+}, function(error) {
+    return Promise.reject(error)
+})
+
 export const request = {
     get(url, data, type) {
         let config = {
