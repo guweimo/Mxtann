@@ -6,7 +6,8 @@ const defaults = {
     content: '',
     duration: 3000,
     type: '',
-    callback: null
+    callback: null,
+    topClass: ''
 }
 
 const messageVueConstructor = Vue.extend(messageVue)

@@ -1,7 +1,7 @@
 <template>
     <transition name="mei-message-fade" @after-leave="afterLeave">
         <div v-if="show" :class="[
-        'mei-message',
+        'mei-message', topClass,
         type? `mei-message-${ type }` : '']">
             <span class="mei-message-con">{{content}}</span>
         </div>
@@ -21,7 +21,8 @@ export default {
         return {
             show: false,
             content: '',
-            type: ''
+            type: '',
+            topClass: ''
         }
     },
     computed: {
@@ -54,6 +55,10 @@ export default {
         z-index: 2334;
         box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
         text-align: center;
+    }
+
+    .mei-message-top {
+        top: 5px;
     }
 
     .mei-message-success {
