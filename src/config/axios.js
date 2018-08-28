@@ -12,10 +12,11 @@ axios.interceptors.response.use(function(config) {
 })
 
 export const request = {
-    get(url, data, type) {
+    get(url, data, type, timeout=7000) {
         let config = {
             method: 'GET',
             url: url,
+            timeout,
             params: data || {},
             headers: type || {
                 'X-Requested-With': 'XMLHttpRequest'
