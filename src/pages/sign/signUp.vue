@@ -34,8 +34,8 @@ export default {
         return {
             formData: {
                 name: '',
-                email: '',
-                pass: ''
+                pass: '',
+                email: ''
             },
             nameError: '',
             emailError: '',
@@ -71,6 +71,10 @@ export default {
                 this.$axios.post('/apis/sign/registerUser', this.formData).then(res => {
                     if (res.data.status === 2000) {
                         this.$router.replace('/login')
+                    } else {
+                        if (res.data.type) {
+                            this[`${res.data.type}Error`] = res.data.message
+                        }
                     }
                 })
             } else {
