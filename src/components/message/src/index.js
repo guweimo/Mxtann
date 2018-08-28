@@ -5,7 +5,8 @@ const defaults = {
     show: false,
     content: '',
     duration: 3000,
-    type: ''
+    type: '',
+    callback: null
 }
 
 const messageVueConstructor = Vue.extend(messageVue)
@@ -16,6 +17,7 @@ messageVueConstructor.prototype.close = function() {
         if (this.$el && this.$el.parentNode) {
             this.$el.parentNode.removeChild(this.$el)
         }
+        typeof this.callback === 'function' && this.callback()
         this.$destroy()
     }
     this.show = false
