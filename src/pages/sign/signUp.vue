@@ -5,12 +5,12 @@
                 <h2>注册</h2>
                 <div class="register-item">
                     <label for="register_name">用户名</label>
-                    <input type="text" class="form-control input-block" id="register_name" v-model="formData.name" required placeholder="请输入用户名" @blur="validName" @keyup="keyupName">
+                    <input type="text" class="form-control input-block" id="register_name" v-model.trim="formData.name" required placeholder="请输入用户名" @blur="validName" @keyup="keyupName">
                     <p class="error" v-text="nameError"></p>
                 </div>
                 <div class="register-item">
                     <label for="register_email">邮箱</label>
-                    <input type="email" class="form-control input-block" id="register_email" v-model="formData.email" required placeholder="email@email.com" @blur="validEmail" @keyup="keyupEmail">
+                    <input type="email" class="form-control input-block" id="register_email" v-model.trim="formData.email" required placeholder="email@email.com" @blur="validEmail" @keyup="keyupEmail">
                     <p class="error" v-text="emailError"></p>
                 </div>
                 <div class="register-item">
@@ -68,7 +68,11 @@ export default {
         ...mapMutations(['TRUE_BLOG_ROUTER', 'FALSE_BLOG_ROUTER']),
         register() {
             if (this.isValid) {
-                this.$router.replace('/login')
+                this.$axios.post('/apis/sign/registerUser', this.formData).then(res => {
+                    if (res.data.status === 2000) {
+                        this.$router.replace('/login')
+                    }
+                })
             } else {
 
             }
