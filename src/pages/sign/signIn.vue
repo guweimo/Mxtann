@@ -51,7 +51,8 @@ export default {
                     this.errorText = res.data.message
                 } else if (res.data.status == 2000) {
                     setStore(res.data.data)
-                    this.$router.go(-1)
+                    // this.$router.go(-1)
+                    this.$router.replace('/home')
                 }
             })
         },
