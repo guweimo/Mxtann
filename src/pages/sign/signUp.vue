@@ -92,7 +92,10 @@ export default {
             }
         },
         validPass() {
-            if (this.formData.pass.length < 6 || this.formData.pass.length > 20) {
+            if (this.formData.pass.length === 0) {
+                this.passError = '密码不能为空！'
+            }
+            else if (this.formData.pass.length < 6 || this.formData.pass.length > 20) {
                 this.passError = '密码不能小于6位，大于20位！'
             }
         },
