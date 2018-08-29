@@ -49,7 +49,7 @@ export default {
         min-width: 300px;
         transform: translateX(-50%);
         background-color: #edf2fc;
-        transition: opacity .3s, transform .4s;
+        transition: opacity .3s;
         overflow: hidden;
         padding: 15px;
         z-index: 2334;
@@ -85,8 +85,18 @@ export default {
         display: inline-block;
     }
 
+    @keyframes wrapper-gradient {
+        0% {
+            transform: translateY(-100%) translateX(-50%);
+        }
+        100% {
+            transform: translateY(0) translateX(-50%);
+        }
+    }
+
     .mei-message-fade-enter-active {
         transition: all 0.3s linear;
+        animation: wrapper-gradient 0.5s linear;
     }
 
     .mei-message-fade-leave-active {
