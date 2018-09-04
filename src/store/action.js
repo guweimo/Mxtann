@@ -3,7 +3,11 @@ import { getUser } from '../config/getData'
 
 export default {
     getUserInfo({commit, state}) {
-        // requests.get('').then((res) => {})
-        commit(GET_USERINFO, info)
+        if (state.userInfo != null) {
+            return true
+        } else {
+            // getUser().then((res) => {})
+            commit(GET_USERINFO, info)
+        }
     }
 }
