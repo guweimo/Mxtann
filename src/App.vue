@@ -9,7 +9,7 @@
 <script>
 import headNav from '@/components/header/headNav'
 import footerCol from '@/components/footer/footerCol'
-import { mapState, mapMutations } from 'vuex'
+import { mapState, mapMutations, mapActions } from 'vuex'
 
 export default {
     name: 'App',
@@ -22,6 +22,9 @@ export default {
         headNav,
         footerCol
     },
+    created() {
+        this.getUserInfo()
+    },
     computed: {
         ...mapState(['isBlogRouter', 'navData'])
     },
@@ -29,7 +32,8 @@ export default {
         this.GET_NAV_DATA()
     },
     methods: {
-        ...mapMutations(['GET_NAV_DATA'])
+        ...mapMutations(['GET_NAV_DATA']),
+        ...mapActions(['getUserInfo']),
     }
 }
 </script>
