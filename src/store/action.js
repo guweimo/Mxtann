@@ -1,5 +1,5 @@
-import { GET_USERINFO } from "./mutation-types";
-import requests from '@/config/axios'
+import { GET_USERINFO } from "./mutation-types"
+import { getUser } from '../config/getData'
 
 export default {
     getUserInfo({commit, state}) {
