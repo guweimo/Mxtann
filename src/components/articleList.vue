@@ -120,4 +120,3 @@ export default {
     color: rgb(216, 38, 106);
 }
 </style>
-
