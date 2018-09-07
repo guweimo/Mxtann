@@ -3,53 +3,53 @@ $default-color: #52bab3;
 // 默认样式 start
 body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, 
 dl, dt, dd, ul, ol, li, pre, form, 
-fieldset, legend, button, input, textarea, th, td { 
+fieldset, legend, button, input, textarea, th, td {
     margin:0;
     padding:0;
 }
 /* body, button, input, select, textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; } */
 /* h1, h2, h3, h4, h5, h6{ font-size:100%; } */
-address, cite, dfn, em, var { 
+address, cite, dfn, em, var {
     font-style:normal;
 }
-code, kbd, pre, samp { 
+code, kbd, pre, samp {
     font-family:couriernew, courier, monospace;
 }
-small{ 
+small{
     font-size:12px; 
 }
-ul, ol { 
+ul, ol {
     list-style:none; 
 }
-a { 
+a {
     text-decoration:none; 
     color: #29B4F0;
 }
-a:hover { 
+a:hover {
     text-decoration: none; 
     color: #0d8abf;
 }
-sup { 
+sup {
     vertical-align:text-top; 
 }
-sub{ 
+sub{
     vertical-align:text-bottom; 
 }
-legend { 
+legend {
     color:#000; 
 }
-fieldset, img { 
+fieldset, img {
     border:0; 
 }
 // button, input, select, textarea { font-size:100%; }
-table { 
+table {
     border-collapse:collapse; 
     border-spacing:0; 
 }
-a, button { 
+a, button {
     cursor: pointer; 
 }
-html, body { 
+html, body {
     height: 100%; 
 }
 html {
@@ -67,7 +67,7 @@ body {
 }
 // 默认样式 end
 
-.body-no-padding { 
+.body-no-padding {
     padding-top: 0;
 }
 
