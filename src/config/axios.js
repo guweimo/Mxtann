@@ -5,6 +5,7 @@ let jsonType = {
 	'X-Requested-With': 'XMLHttpRequest'
 }
 
+// 请求完成拦截
 axios.interceptors.response.use(function(config) {
     return config
 }, function(error) {
