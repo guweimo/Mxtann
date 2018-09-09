@@ -22,6 +22,7 @@ export default {
         this.obtionDetailData()
     },
     methods: {
+        // 获取博文详情
         obtionDetailData() {
             this.$axios.get('/apis/article/detail', {
                 id: this.$route.params.id
