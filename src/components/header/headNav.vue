@@ -96,6 +96,7 @@ export default {
     li {
         margin: 0 10px;
         vertical-align: middle;
+        position: relative;
         &:last-of-type {
             margin-left: auto;
         }
