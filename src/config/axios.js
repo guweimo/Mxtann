@@ -13,6 +13,7 @@ axios.interceptors.response.use(function(config) {
 })
 
 export const request = {
+    // get请求
     get(url, data, type, timeout=7000) {
         let config = {
             method: 'GET',
@@ -25,6 +26,8 @@ export const request = {
         }
         return axios(config)
     },
+    
+    // post请求
     post(url, data, type=jsonType) {
         let config = {
             method: 'POST',
