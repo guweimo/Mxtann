@@ -1,5 +1,7 @@
 /**
  * 存储localStorage
+ * @param {String} name 
+ * @param {*} content 
  */
 export const setStore = (name, content) => {
     if (!name) return;
@@ -11,6 +13,8 @@ export const setStore = (name, content) => {
 
 /**
  * 获取localStorage
+ * @param {String} name 
+ * @param {Boolean} isConversion 判断是否需要把json转成json对象
  */
 export const getStore = (name, isConversion=false) => {
     if (!name) return;
@@ -23,14 +27,18 @@ export const getStore = (name, isConversion=false) => {
 
 /**
  * 删除localStorage
+ * @param {String} name 
  */
 export const removeStore = name => {
     if (!name) return;
     window.localStorage.removeItem(name)
 }
 
+
 /**
  * 存储sessionStorage
+ * @param { String } name 
+ * @param { * } content 
  */
  export const setSession = (name, content) => {
      if (!name) return;
@@ -42,6 +50,8 @@ export const removeStore = name => {
 
 /**
  * 获取sessionStorage
+ * @param {String} name 
+ * @param {Boolean} isConversion 判断是否需要把json转成json对象
  */
 export const getSession = (name, isConversion=false) => {
     if (!name) return;
@@ -54,6 +64,7 @@ export const getSession = (name, isConversion=false) => {
 
 /**
  * 删除sessionStorage
+ * @param {String} name 
  */
 export const removeSession = name => {
     if (!name) return;
