@@ -1,5 +1,7 @@
 <template>
-    
+    <div class="button-group">
+        <button class="btn"></button>
+    </div>
 </template>
 
 
@@ -10,4 +12,10 @@ export default {
     }
 }
 </script>
+
+<style lang="scss" scoped>
+.btn {
+    
+}
+</style>
 
