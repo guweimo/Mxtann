@@ -15,7 +15,12 @@ export default {
 
 <style lang="scss" scoped>
 .btn {
-    
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 10px 20px;
+    outline: auto;
+    text-transform: uppercase;
+    color: #fff;
 }
 </style>
 
