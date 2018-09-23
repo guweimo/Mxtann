@@ -1,7 +1,5 @@
 <template>
-    <div class="button-group">
-        <button class="btn"></button>
-    </div>
+    <button class="btn"></button>
 </template>
 
 
