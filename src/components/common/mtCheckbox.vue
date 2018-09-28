@@ -24,7 +24,27 @@ export default {
     width: 16px;
     height: 16px;
     border-radius: 2px;
+    position: relative;
 }
 
+.blue-checkbox-active {
+    border: 1px solid #ccc;
+    background: #33e;
+}
+
+.blue-checkbox-active::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: -2px;
+    left: 5px;
+    width: 4px;
+    height: 12px;
+    border: 2px solid transparent;
+    border-bottom-color: #fff;
+    border-right-color: #fff;
+    transform: rotate(45deg);
+    transform-origin: center center;
+}
 
 </style>
