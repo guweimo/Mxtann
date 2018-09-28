@@ -19,5 +19,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.blue-checkbox {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+}
+
 
 </style>
