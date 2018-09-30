@@ -19,4 +19,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.blue-radio {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    position: relative;
+    transform: border .3s;
+}
+
+.blue-radio-active {
+    
+}
 </style>
