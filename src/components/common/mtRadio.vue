@@ -29,6 +29,8 @@ export default {
 }
 
 .blue-radio-active {
-    
+    &::before {
+        
+    }
 }
 </style>
