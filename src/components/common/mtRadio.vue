@@ -30,7 +30,7 @@ export default {
 
 .blue-radio-active {
     &::before {
-        
+        content: "";
     }
 }
 </style>
