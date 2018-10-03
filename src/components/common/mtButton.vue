@@ -1,5 +1,5 @@
 <template>
-    <button class="mt-btn" :class="[type ? type : '' ]" @click="handleClick">
+    <button class="mt-btn" @click="handleClick">
         <slot />
     </button>
 </template>
@@ -54,7 +54,7 @@ $cancel-hover-color: #a6a9ad;
     }
 }
 
-.mt-btn.mt-default {
+.mt-btn.mt-primary {
     color: #fff;
     // border-color: $default-color;
     background-color: $default-color;

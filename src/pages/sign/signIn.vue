@@ -8,7 +8,7 @@
                 <label for="login_pass">密码</label>
                 <input type="password" class="form-control input-block" id="login_pass" v-model="formData.pass" @keyup="cancelError">
                 <p class="error" ng-show="isError" v-text="errorText"></p>
-                <mt-button>登录</mt-button>
+                <mt-button class="mt-primary">登录</mt-button>
             </form>
         </div>
     </div>

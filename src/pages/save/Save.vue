@@ -19,8 +19,8 @@
                     <mavon-editor class="form-bottom-item" v-model="formData.marktext" :subfield="this.bars.subfield" :toolbars="bars" @change="obtainHTML"></mavon-editor>
                 </div>
                 <div class="form-bottom">
-                    <mt-button type="mt-cancel" @click="cancel">取消</mt-button>
-                    <mt-button @click="saveArticle">提交</mt-button>
+                    <mt-button class="mt-cancel" @click="cancel">取消</mt-button>
+                    <mt-button class="mt-primary" @click="saveArticle">提交</mt-button>
                 </div>
             </form>
         </div>
