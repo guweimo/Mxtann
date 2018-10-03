@@ -1,7 +1,6 @@
 <template>
     <button 
-        class="mt-btn" 
-        :type="typeArr" 
+        class="mt-btn"
         :class="[type ? 'mt-btn-' + type : '' ]" 
         @click="handleClick"
     >
