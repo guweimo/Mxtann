@@ -34,7 +34,8 @@ $cancel-color: #888;
 $cancel-hover-color: #a6a9ad;
 
 .mt-btn {
-    border: 1px solid transparent;
+    // border: 1px solid transparent;
+    border: 0;
     border-radius: 4px;
     padding: 10px 20px;
     text-transform: uppercase;
@@ -59,7 +60,7 @@ $cancel-hover-color: #a6a9ad;
 
 .mt-btn-default {
     color: #fff;
-    border-color: $default-color;
+    // border-color: $default-color;
     background-color: $default-color;
     &:hover {
         opacity: 0.75;
@@ -69,9 +70,9 @@ $cancel-hover-color: #a6a9ad;
 .mt-btn-cancel {
     color: #fff;
     background-color: $cancel-color;
-    border-color: $cancel-color;
+    // border-color: $cancel-color;
     &:hover {
-        border-color: $cancel-hover-color;
+        // border-color: $cancel-hover-color;
         background-color: $cancel-hover-color;
     }
 }
