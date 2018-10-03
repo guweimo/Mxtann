@@ -30,12 +30,13 @@ export default {
 
 <style lang="scss" scoped>
 $default-color: #52bab3;
+$cancel-color: #888;
+$cancel-hover-color: #a6a9ad;
 
 .mt-btn {
     border: 1px solid transparent;
     border-radius: 4px;
     padding: 10px 20px;
-    // outline: auto;
     text-transform: uppercase;
     color: #fff;
     text-align: center;
@@ -44,8 +45,9 @@ $default-color: #52bab3;
     display: inline-block;
     white-space: nowrap;
     user-select: none;
-    transform: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out,
+        opacity 0.15s ease-in-out;
     &:hover,
     &:focus,
     &:active {
@@ -61,6 +63,16 @@ $default-color: #52bab3;
     background-color: $default-color;
     &:hover {
         opacity: 0.75;
+    }
+}
+
+.mt-btn-cancel {
+    color: #fff;
+    background-color: $cancel-color;
+    border-color: $cancel-color;
+    &:hover {
+        border-color: $cancel-hover-color;
+        background-color: $cancel-hover-color;
     }
 }
 </style>
