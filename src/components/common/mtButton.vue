@@ -1,9 +1,5 @@
 <template>
-    <button 
-        class="mt-btn"
-        :class="[type ? 'mt-btn-' + type : '' ]" 
-        @click="handleClick"
-    >
+    <button class="mt-btn" :class="[type ? type : '' ]" @click="handleClick">
         <slot />
     </button>
 </template>
@@ -17,7 +13,7 @@ export default {
     props: {
         type: {
             type: String,
-            default: 'default'
+            default: 'mt-default'
         }
     },
     methods: {
@@ -58,7 +54,7 @@ $cancel-hover-color: #a6a9ad;
     }
 }
 
-.mt-btn-default {
+.mt-btn.mt-default {
     color: #fff;
     // border-color: $default-color;
     background-color: $default-color;
@@ -67,7 +63,7 @@ $cancel-hover-color: #a6a9ad;
     }
 }
 
-.mt-btn-cancel {
+.mt-btn.mt-cancel {
     color: #fff;
     background-color: $cancel-color;
     // border-color: $cancel-color;
@@ -77,4 +73,3 @@ $cancel-hover-color: #a6a9ad;
     }
 }
 </style>
-
