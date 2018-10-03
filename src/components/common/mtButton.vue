@@ -1,15 +1,25 @@
 <template>
-    <button class="btn btn-default" @click="handleClick">
+    <button 
+        class="mt-btn" 
+        :type="typeArr" 
+        :class="[type ? 'mt-btn-' + type : '' ]" 
+        @click="handleClick"
+    >
         <slot />
     </button>
 </template>
-
 
 <script>
 export default {
     name: 'mtButton',
     data() {
         return {}
+    },
+    props: {
+        type: {
+            type: String,
+            default: 'default'
+        }
     },
     methods: {
         handleClick(event) {
@@ -22,7 +32,7 @@ export default {
 <style lang="scss" scoped>
 $default-color: #52bab3;
 
-.btn {
+.mt-btn {
     border: 1px solid transparent;
     border-radius: 4px;
     padding: 10px 20px;
@@ -37,14 +47,16 @@ $default-color: #52bab3;
     user-select: none;
     transform: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
         border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    &:hover, &:focus, &:active {
+    &:hover,
+    &:focus,
+    &:active {
         outline: none !important;
         color: #fff;
         box-shadow: none;
     }
 }
 
-.btn-default {
+.mt-btn-default {
     color: #fff;
     border-color: $default-color;
     background-color: $default-color;
