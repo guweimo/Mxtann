@@ -18,7 +18,7 @@
                     <input type="password" class="form-control input-block" id="register_pass" v-model="formData.pass" placeholder="请输入密码" required  @blur="validPass" @keyup="keyupPass">
                     <p class="error" v-text="passError"></p>
                 </div>
-                <button class="btn btn-default">注册</button>
+                <mt-button>注册</mt-button>
             </form>
         </div>
     </div>
@@ -26,10 +26,14 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex'
+import mtButton from '@/components/common/mtButton'
 
 let emailRE = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
 export default {
+    components: {
+        mtButton
+    },
     data() {
         return {
             formData: {

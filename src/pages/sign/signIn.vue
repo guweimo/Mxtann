@@ -8,7 +8,7 @@
                 <label for="login_pass">密码</label>
                 <input type="password" class="form-control input-block" id="login_pass" v-model="formData.pass" @keyup="cancelError">
                 <p class="error" ng-show="isError" v-text="errorText"></p>
-                <button class="btn btn-default">登录</button>
+                <mt-button>登录</mt-button>
             </form>
         </div>
     </div>
@@ -17,9 +17,13 @@
 <script>
 import { mapState, mapMutations } from 'vuex'
 import { setStore } from '@/config/unit'
+import mtButton from '@/components/common/mtButton'
 
 // 登录
 export default {
+    components: {
+        mtButton
+    },
     data() {
         return {
             isError: false,
