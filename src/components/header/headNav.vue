@@ -13,7 +13,8 @@
                         <input type="text" class="form-control" v-model="searchData.title" placeholder="请搜索博文" @keyup.13="searchTitle">
                     </li>
                     <li>
-                        <button class="btn btn-default" @click="gotoSave">发布</button>
+                        <!-- <button class="btn btn-default" @click="gotoSave">发布</button> -->
+                        <mt-button @click="gotoSave">发布</mt-button>
                     </li>
                     <li>
                         <div class="sign">
@@ -33,9 +34,13 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex'
+import mtButton from '@/components/common/mtButton'
 import Bus from '@/config/bus'
 
 export default {
+    components: {
+        mtButton,
+    },
     props: {
         navList: {
             type: Array,

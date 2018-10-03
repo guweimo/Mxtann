@@ -1,12 +1,20 @@
 <template>
-    <button class="btn"></button>
+    <button class="btn btn-default" @click="handleClick">
+        <slot />
+    </button>
 </template>
 
 
 <script>
 export default {
+    name: 'mtButton',
     data() {
         return {}
+    },
+    methods: {
+        handleClick(event) {
+            this.$emit('click', event)
+        }
     }
 }
 </script>
@@ -18,7 +26,7 @@ $default-color: #52bab3;
     border: 1px solid transparent;
     border-radius: 4px;
     padding: 10px 20px;
-    outline: auto;
+    // outline: auto;
     text-transform: uppercase;
     color: #fff;
     text-align: center;
@@ -29,12 +37,20 @@ $default-color: #52bab3;
     user-select: none;
     transform: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
         border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    &:hover, &:focus, &:active {
+        outline: none !important;
+        color: #fff;
+        box-shadow: none;
+    }
 }
 
 .btn-default {
     color: #fff;
     border-color: $default-color;
     background-color: $default-color;
+    &:hover {
+        opacity: 0.75;
+    }
 }
 </style>
 
