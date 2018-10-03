@@ -13,7 +13,6 @@
                         <input type="text" class="form-control" v-model="searchData.title" placeholder="请搜索博文" @keyup.13="searchTitle">
                     </li>
                     <li>
-                        <!-- <button class="btn btn-default" @click="gotoSave">发布</button> -->
                         <mt-button @click="gotoSave">发布</mt-button>
                     </li>
                     <li>

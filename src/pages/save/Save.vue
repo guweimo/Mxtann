@@ -19,8 +19,8 @@
                     <mavon-editor class="form-bottom-item" v-model="formData.marktext" :subfield="this.bars.subfield" :toolbars="bars" @change="obtainHTML"></mavon-editor>
                 </div>
                 <div class="form-bottom">
-                    <button type="button" class="btn btn-cancel" @click="cancel">取消</button>
-                    <button type="button" class="btn btn-default" @click="saveArticle">提交</button>
+                    <mt-button type="cancel" @click="cancel">取消</mt-button>
+                    <mt-button @click="saveArticle">提交</mt-button>
                 </div>
             </form>
         </div>
@@ -31,10 +31,12 @@
 import { mavonEditor } from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
 import { mapState, mapMutations } from 'vuex'
+import mtButton from '@/components/common/mtButton'
 
 export default {
     name: 'Save',
     components: {
+        mtButton,
         mavonEditor
     },
     data() {
