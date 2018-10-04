@@ -1,5 +1,5 @@
 <template>
-    <button class="mt-btn" @click="handleClick">
+    <button class="mt-btn" @click="handleClick" :type="type">
         <slot />
     </button>
 </template>
@@ -13,7 +13,7 @@ export default {
     props: {
         type: {
             type: String,
-            default: 'mt-default'
+            default: 'button'
         }
     },
     methods: {
