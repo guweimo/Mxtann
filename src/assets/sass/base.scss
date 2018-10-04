@@ -7,8 +7,6 @@ fieldset, legend, button, input, textarea, th, td {
     margin:0;
     padding:0;
 }
-/* body, button, input, select, textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; } */
-/* h1, h2, h3, h4, h5, h6{ font-size:100%; } */
 address, cite, dfn, em, var {
     font-style:normal;
 }
@@ -41,7 +39,6 @@ legend {
 fieldset, img {
     border:0; 
 }
-// button, input, select, textarea { font-size:100%; }
 table {
     border-collapse:collapse; 
     border-spacing:0; 
@@ -164,9 +161,7 @@ body {
     margin: 0.21rem 0;
     min-height: 1.5rem;
 }
-
 /* ------------ 公共样式 end ------------ */
-
 
 // ------------ 设置markdown内容里的样式 start ------------
 .markdowm-body {
