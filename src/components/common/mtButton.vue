@@ -56,7 +56,6 @@ $cancel-hover-color: #a6a9ad;
 
 .mt-btn.mt-primary {
     color: #fff;
-    // border-color: $default-color;
     background-color: $default-color;
     &:hover {
         opacity: 0.75;
@@ -66,9 +65,7 @@ $cancel-hover-color: #a6a9ad;
 .mt-btn.mt-cancel {
     color: #fff;
     background-color: $cancel-color;
-    // border-color: $cancel-color;
     &:hover {
-        // border-color: $cancel-hover-color;
         background-color: $cancel-hover-color;
     }
 }
