@@ -14,6 +14,7 @@ import cssList from '@/pages/type/cssList'
 import vueList from '@/pages/type/vueList'
 import search from '@/pages/type/search'
 import detail from '@/pages/detail/detail'
+import test from '@/pages/test/test'
 
 Vue.use(Router)
 
@@ -37,7 +38,8 @@ const router = new Router({
         { path: '/css', component: cssList },
         { path: '/vue', component: vueList },
         { path: '/search/:title', component: search },
-        { name: 'article', path: '/article/:id', component: detail }
+        { name: 'article', path: '/article/:id', component: detail },
+        { path: '/test', component: test }
     ]
 })
 
