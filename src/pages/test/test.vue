@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="test-container">
+        <div class="test-container" v-show="istest">
             <div class="table">
                 <div class="table-header">
                     <div class="table-header-left">开局时间：2018-09-01 15：29</div>
@@ -61,7 +61,10 @@
 <script>
 export default {
     data() {
-        return {}
+        return {
+            istest: true,
+            istest2: false
+        }
     }
 }
 </script>
