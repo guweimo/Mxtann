@@ -55,6 +55,16 @@
                 <div class="table-footer"></div>
             </div>
         </div>
+        <div class="transition-container">
+            <div class="group">
+                <div class="cursor">触发</div>
+                <div class="bor">
+                    <div class="transition-content">
+                        你好
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -70,7 +80,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.test-container {
+.container {
     width: 100%;
     padding: 20px;
     min-height: 200px;
@@ -144,5 +154,26 @@ export default {
         width: 50%;
     }
 }
+
+.transition-container {
+    .group {
+        .cursor {
+            cursor: pointer;
+        }
+        .transition-content {
+            display: none;
+            margin: 20px;
+        }
+        .bor {
+            border: 1px solid #ccc;
+            user-select: none;
+        }
+        &:hover .transition-content {
+            display: block;
+        }
+    }
+}
+
+
 </style>
 
