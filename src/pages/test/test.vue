@@ -60,7 +60,7 @@
                 <div class="cursor">触发</div>
                 <div class="bor">
                     <div class="transition-content">
-                        你好
+                        1
                     </div>
                 </div>
             </div>
