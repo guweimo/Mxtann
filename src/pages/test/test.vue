@@ -65,6 +65,71 @@
                 </div>
             </div>
         </div>
+        <div class="special" v-show="istest3">
+            <div class="special-table">
+                <div class="special-table-header">
+                    <div class="item-title">
+                        时间
+                    </div>
+                    <div class="item-title">
+                        编号
+                    </div>
+                    <div class="item-title">
+                        作者
+                    </div>
+                    <div class="item-title">
+                        标题
+                    </div>
+                    <div class="item-title">
+                        内容
+                    </div>
+                    <div class="item-title">
+                        字数
+                    </div>
+                    <div class="item-title">
+                        稿费
+                    </div>
+                </div>
+                <div class="special-table-body">
+                    <div class="left">
+                        <div class="item-title">
+                            你好
+                        </div>
+                        <div class="item-title">
+                            你好
+                        </div>
+                        <div class="item-title">
+                            你好
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="item">
+                            <div class="item-left">
+                                <div class="item-title">
+                                    dsafd
+                                </div>
+                            </div>
+                            <div class="item-right">
+                                <ul class="main">
+                                    <li class="list">
+                                        <dl>
+                                            <dt>dsafd</dt>
+                                            <dt>fsdfa</dt>
+                                        </dl>
+                                    </li>
+                                    <li class="list">
+                                        <dl>
+                                            <dt></dt>
+                                            <dt></dt>
+                                        </dl>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -73,7 +138,8 @@ export default {
     data() {
         return {
             istest: true,
-            istest2: false
+            istest2: false,
+            istest3: false
         }
     }
 }
@@ -113,7 +179,7 @@ export default {
                 border-right: 1px solid #dadada;
                 justify-content: center;
                 align-items: center;
-                background: #F2F9FF;
+                background: #f2f9ff;
             }
         }
     }
@@ -147,7 +213,7 @@ export default {
     .table-body .left,
     .table-body .right .item-left {
         width: 50%;
-        
+
         border-right: 1px solid #dadada;
     }
     .table-body dt {
@@ -170,6 +236,68 @@ export default {
         }
         &:hover .transition-content {
             display: block;
+        }
+    }
+}
+
+.special {
+    width: 800px;
+    min-height: 30px;
+    margin: 10px auto;
+}
+
+.special-table {
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    .special-table-header {
+        display: table;
+        width: 100%;
+    }
+    .special-table-body {
+        display: table;
+        width: 100%;
+        text-align: center;
+    }
+    .special-table-body .left,
+    .special-table-body .right {
+        display: table-cell;
+    }
+    .special-table-body .left {
+        width: 342px;
+    }
+    .special-table-body .right {
+        width: 458px;
+    }
+    .item-title {
+        display: table-cell;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        width: 114px;
+    }
+    .special-table-body .right {
+        .item {
+            display: table-cell;
+            width: 100%;
+            .item-left {
+                display: table-cell;
+                width: 114px;
+            }
+            .item-right {
+                display: table-cell;
+                dl {
+                    display: table-cell;
+                }
+                dt {
+                    display: table-cell;
+                    border-right: 1px solid #ccc;
+                    border-bottom: 1px solid #ccc;
+                    padding: 10px;
+                    width: 114px;
+                }
+            }
         }
     }
 }
