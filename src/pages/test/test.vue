@@ -55,7 +55,7 @@
                 <div class="table-footer"></div>
             </div>
         </div>
-        <div class="transition-container">
+        <div class="transition-container" v-show="istest2">
             <div class="group">
                 <div class="cursor">触发</div>
                 <div class="bor">
