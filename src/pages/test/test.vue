@@ -139,7 +139,7 @@ export default {
         return {
             istest: true,
             istest2: false,
-            istest3: false
+            istest3: false,
         }
     }
 }
