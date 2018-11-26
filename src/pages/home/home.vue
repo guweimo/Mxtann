@@ -6,6 +6,8 @@
 
 <script>
 import articleList from '@/components/articleList'
+import { pageList } from '@/config/getData'
+
 export default {
     components: {
         articleList
@@ -16,7 +18,7 @@ export default {
         }
     },
     mounted() {
-        this.$axios.post('/apis/home/list').then(res => {
+        pageList().then(res => {
             if (res.data.status == 2000) {
                 this.list = res.data.data
             }

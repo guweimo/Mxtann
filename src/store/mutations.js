@@ -1,29 +1,21 @@
 import {
-    TRUE_BLOG_ROUTER, 
-    FALSE_BLOG_ROUTER,
     GET_NAV_DATA,
     SELECT_TYPE,
     GET_USERINFO
 } from './mutation-types'
-import {request} from '@/config/axios'
-import { setStore, getStore } from '@/config/unit'
+import { setStore, getStore } from '../config/unit'
+import { navType } from '../config/getData'
 
 let navName = 'navlist'
 
 export default {
-    [TRUE_BLOG_ROUTER] (state) {
-        state.isBlogRouter = true
-    },
-    [FALSE_BLOG_ROUTER] (state) {
-        state.isBlogRouter = false
-    },
     [GET_NAV_DATA] (state) {
         let navlist = getStore(navName, true)
         if (state.navData.length == 0) {
             if (navlist != null) {
                 state.navData = navlist
             }
-            request.get('/apis/home/navlist').then(res => {
+            navType().then(res => {
                 if (res.data.status == 2000) {
                     setStore(navName, res.data.data)
                     state.navData = res.data.data

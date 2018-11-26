@@ -34,7 +34,6 @@ export const removeStore = name => {
     window.localStorage.removeItem(name)
 }
 
-
 /**
  * 存储sessionStorage
  * @param { String } name 
