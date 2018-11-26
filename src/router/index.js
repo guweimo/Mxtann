@@ -5,6 +5,7 @@ import Blog from '@/pages/blog/Blog'
 import Save from '@/pages/save/Save'
 import markPreview from '@/pages/preview/markPreview'
 import Home from '@/pages/home/home'
+import Main from '@/pages/home/main'
 import signIn from '@/pages/sign/signIn'
 import signUp from '@/pages/sign/signUp'
 import error from '@/pages/error/error'
@@ -22,24 +23,30 @@ const router = new Router({
     mode: 'history',
     routes: [
         { path: '/', component: Blog },
-        { path: '/save', component: Save },
-        { path: '/markPreview', component: markPreview },
-        { path: '/home', component: Home },
         { path: '/login', component: signIn },
         { path: '/register', component: signUp },
-        { 
-            path: '/error', 
-            component: error, 
+        {
+            path: '/main',
+            component: Main,
             children: [
-                { path: '404', component: notFound }
+                { path: '/home', component: Home },
+                { path: '/markPreview', component: markPreview },
+                { path: '/save', component: Save },
+                { 
+                    path: '/error', 
+                    component: error, 
+                    children: [
+                        { path: '404', component: notFound }
+                    ]
+                },
+                { path: '/javascript', component: jsList },
+                { path: '/css', component: cssList },
+                { path: '/vue', component: vueList },
+                { path: '/search/:title', component: search },
+                { name: 'article', path: '/article/:id', component: detail },
+                { path: '/test', component: test },
             ]
         },
-        { path: '/javascript', component: jsList },
-        { path: '/css', component: cssList },
-        { path: '/vue', component: vueList },
-        { path: '/search/:title', component: search },
-        { name: 'article', path: '/article/:id', component: detail },
-        { path: '/test', component: test }
     ]
 })
 
