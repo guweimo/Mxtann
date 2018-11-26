@@ -16,13 +16,16 @@
                         <mt-button class="mt-primary" @click="gotoSave">发布</mt-button>
                     </li>
                     <li>
-                        <div class="sign">
+                        <div class="sign"  v-if="false">
                             <router-link to="/login" class="a-inline">登录</router-link>
                             <router-link to="/register" class="a-inline">注册</router-link>
                         </div>
-                        <div class="user-info" v-if="false">
+                        <div class="user-info" @click="showDropdown">
                             <img class="avatar" height="20" width="20">
                             <span class="dropdown-caret"></span>
+                            <div class="dropdown-menu" v-show="dropdown">
+                                fdsafdsf
+                            </div>
                         </div>
                     </li>
                 </ul>
@@ -50,7 +53,8 @@ export default {
         return {
             searchData: {
                 title: ''
-            }
+            },
+            dropdown: false
         }
     },
     computed: {
@@ -71,7 +75,10 @@ export default {
             if (this.$route.path.indexOf('/search/') > -1) {
                 this.searchData.title = this.$route.params.title
             }
-        }
+        },
+        showDropdown() {
+            this.dropdown = true
+        },
     }
 }
 </script>
@@ -129,6 +136,8 @@ export default {
 }
 
 .user-info {
+    cursor: pointer;
+    position: relative;
     .dropdown-caret {
         display: inline-block;
         width: 0;
@@ -141,11 +150,15 @@ export default {
         border-left-color: transparent;
         margin-top: 5px;
     }
-    
     .avatar {
         vertical-align: middle;
         margin-right: 3px;
         border-radius: 4px;
+    }
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        border: 1px solid #ccc;
     }
 }
 
