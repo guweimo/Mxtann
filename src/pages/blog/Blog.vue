@@ -1,4 +1,3 @@
-
 <template>
     <div class="blog-div">
         <div class="blog-align">
