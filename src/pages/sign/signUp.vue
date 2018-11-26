@@ -18,7 +18,7 @@
                     <input type="password" class="form-control input-block" id="register_pass" v-model="formData.pass" placeholder="请输入密码" required  @blur="validPass" @keyup="keyupPass">
                     <p class="error" v-text="passError"></p>
                 </div>
-                <mt-button class="mt-primary">注册</mt-button>
+                <mt-button class="mt-primary" type="submit">注册</mt-button>
             </form>
         </div>
     </div>
