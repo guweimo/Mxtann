@@ -69,3 +69,25 @@ export const removeSession = name => {
     if (!name) return;
     window.sessionStorage.removeItem(name)
 }
+
+/**
+ * 验证
+ * @param {Object} formData 
+ * @param {Array} nameArr 
+ */
+export const verifyFormValue = (formData = {}, nameArr = []) => {
+    let result = {
+        bol: true,
+        msg: ''
+    }
+    for (let item of nameArr) {
+        let empty = (formData[item.name].trim && formData[item.name].trim() === '') || formData[item.name] === ''
+        if (empty || formData[item.name] === undefined) {
+            result.bol = false
+            result.msg = item.msg
+            break;
+        }
+    }
+    
+    return result
+}

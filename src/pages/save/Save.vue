@@ -32,6 +32,7 @@ import { mavonEditor } from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
 import { mapState, mapMutations } from 'vuex'
 import mtButton from '@/components/common/mtButton'
+import { verifyFormValue } from '@/config/unit'
 
 export default {
     name: 'Save',
@@ -135,18 +136,12 @@ export default {
             })
         },
         verifyform() {
-            let isbol = true
-            let message = ''
-            if (this.formData.title === undefined || this.formData.title.trim() === '') {
-                message = '标题不能为空！'
-                isbol = false
-            } else if(this.formData.type === '') {
-                message = '请选择类型！'
-                isbol = false
-            } else if (this.formData.marktext === '') {
-                message = '内容不能为空！'
-                isbol =  false
-            }
+            const verifyArr = [
+                { name: 'title', msg: '标题不能为空！' },
+                { name: 'type', msg: '请选择类型！' },
+                { name: 'marktext', msg: '内容不能为空！' },
+            ]
+            let { bol: isbol, msg: message } = verifyFormValue(this.formData, verifyArr)
             if (message !== '') {
                 this.$message({
                     type: 'error',
