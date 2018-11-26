@@ -45,6 +45,7 @@ $cancel-hover-color: #a6a9ad;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
         border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out,
         opacity 0.15s ease-in-out;
+    position: relative;
     &:hover,
     &:focus,
     &:active {
@@ -52,21 +53,31 @@ $cancel-hover-color: #a6a9ad;
         color: #fff;
         box-shadow: none;
     }
-}
+    &.mt-primary {
+        color: #fff;
+        background-color: $default-color;
+        &:hover {
+            opacity: 0.75;
+        }
+    }
 
-.mt-btn.mt-primary {
-    color: #fff;
-    background-color: $default-color;
-    &:hover {
-        opacity: 0.75;
+    &.mt-cancel {
+        color: #fff;
+        background-color: $cancel-color;
+        &:hover {
+            background-color: $cancel-hover-color;
+        }
+    }
+    &.mt-gradient {
+        border-radius: 5px;
+        border: 3px solid transparent;
+        color: #fff;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        background-image: linear-gradient(to right, #32A8FF 6%, #00CCB4 94%),
+        linear-gradient(to bottom, #D696BC, #CD4F5D);
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
     }
 }
 
-.mt-btn.mt-cancel {
-    color: #fff;
-    background-color: $cancel-color;
-    &:hover {
-        background-color: $cancel-hover-color;
-    }
-}
 </style>
