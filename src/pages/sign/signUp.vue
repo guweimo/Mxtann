@@ -25,7 +25,6 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
 import mtButton from '@/components/common/mtButton'
 
 let emailRE = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -47,7 +46,6 @@ export default {
         }
     },
     mounted() {
-        this.TRUE_BLOG_ROUTER()
         let body = document.querySelector('body')
         body.className = 'body-no-padding'
         let app = document.querySelector('#app')
@@ -69,7 +67,6 @@ export default {
         }
     },
     methods: {
-        ...mapMutations(['TRUE_BLOG_ROUTER', 'FALSE_BLOG_ROUTER']),
         register() {
             if (this.isValid) {
                 this.$axios.post('/apis/sign/registerUser', this.formData).then(res => {
@@ -118,7 +115,6 @@ export default {
         }
     },
     destroyed() {
-        this.FALSE_BLOG_ROUTER()
         let body = document.querySelector('body')
         body.className = ''
         let app = document.querySelector('#app')
