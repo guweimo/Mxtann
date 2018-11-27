@@ -47,9 +47,9 @@ export default {
     },
     mounted() {
         let body = document.querySelector('body')
-        body.className = 'body-no-padding'
+        body.classList.add('body-no-padding')
         let app = document.querySelector('#app')
-        app.className = 'h100p'
+        app.classList.add('h100p')
     },
     computed: {
         validation() {
@@ -116,9 +116,9 @@ export default {
     },
     destroyed() {
         let body = document.querySelector('body')
-        body.className = ''
+        body.classList.remove('body-no-padding')
         let app = document.querySelector('#app')
-        app.className = ''
+        app.classList.remove('h100p')
     }
 }
 </script>
