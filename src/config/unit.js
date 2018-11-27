@@ -81,7 +81,7 @@ export const verifyFormValue = (formData = {}, nameArr = []) => {
         msg: ''
     }
     for (let item of nameArr) {
-        let empty = (formData[item.name].trim && formData[item.name].trim() === '') || formData[item.name] === ''
+        let empty = (formData[item.name].trim !== undefined && formData[item.name].trim() === '') || formData[item.name] === ''
         if (empty || formData[item.name] === undefined) {
             result.bol = false
             result.msg = item.msg

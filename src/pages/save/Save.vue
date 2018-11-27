@@ -11,7 +11,7 @@
                     <label class="form-top-item"><span class="form-star">*</span>类型</label>
                     <select class="form-bottom-item form-control" v-model="formData.type">
                         <option disabled value="">请选择</option>
-                        <option v-for="item in navData" :key="item.n_id" :value="item.n_id" v-text="item.title"></option>
+                        <option v-for="item in navData" :key="item.id" :value="item.id" v-text="item.title"></option>
                     </select>
                 </div>
                 <div class="form-group">
