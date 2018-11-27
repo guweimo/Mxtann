@@ -5,17 +5,17 @@
                 <h2>注册</h2>
                 <div class="register-item">
                     <label for="register_name">用户名</label>
-                    <input type="text" class="form-control input-block" id="register_name" v-model.trim="formData.name" required placeholder="请输入用户名" @blur="validName" @keyup="keyupName">
+                    <input type="text" class="form-control input-block" id="register_name" v-model.trim="formData.name" required placeholder="请输入用户名" @blur="validName" @keyup="keyupInput('name')">
                     <p class="error" v-text="nameError"></p>
                 </div>
                 <div class="register-item">
                     <label for="register_email">邮箱</label>
-                    <input type="email" class="form-control input-block" id="register_email" v-model.trim="formData.email" required placeholder="email@email.com" @blur="validEmail" @keyup="keyupEmail">
+                    <input type="email" class="form-control input-block" id="register_email" v-model.trim="formData.email" required placeholder="email@email.com" @blur="validEmail" @keyup="keyupInput('email')">
                     <p class="error" v-text="emailError"></p>
                 </div>
                 <div class="register-item">
                     <label for="register_pass">密码</label>
-                    <input type="password" class="form-control input-block" id="register_pass" v-model="formData.pass" placeholder="请输入密码" required  @blur="validPass" @keyup="keyupPass">
+                    <input type="password" class="form-control input-block" id="register_pass" v-model="formData.pass" placeholder="请输入密码" required  @blur="validPass" @keyup="keyupInput('pass')">
                     <p class="error" v-text="passError"></p>
                 </div>
                 <mt-button class="mt-primary" type="submit">注册</mt-button>
@@ -104,14 +104,8 @@ export default {
                 this.passError = '密码不能小于6位，大于20位！'
             }
         },
-        keyupName() {
-            this.nameError = ''
-        },
-        keyupEmail(value) {
-            this.emailError = ''
-        },
-        keyupPass() {
-            this.passError = ''
+        keyupInput(type) {
+            this[type + 'Error'] = ''
         }
     },
     destroyed() {
