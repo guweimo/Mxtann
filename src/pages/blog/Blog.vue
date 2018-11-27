@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
 
 export default {
     name: 'Blog',
@@ -41,21 +40,17 @@ export default {
         }
     },
     mounted() {
-        this.TRUE_BLOG_ROUTER()
         let body = document.querySelector('body')
-        body.className = 'body-no-padding'
+        body.classList.add('body-no-padding')
         let app = document.querySelector('#app')
-        app.className = 'h100p'
-    },
-    methods: {
-        ...mapMutations(['TRUE_BLOG_ROUTER', 'FALSE_BLOG_ROUTER'])
+        app.classList.add('h100p')
     },
     destroyed() {
         this.FALSE_BLOG_ROUTER()
         let body = document.querySelector('body')
-        body.className = ''
+        body.classList.remove('body-no-padding')
         let app = document.querySelector('#app')
-        app.className = ''
+        app.classList.remove('h100p')
     }
 }
 </script>
