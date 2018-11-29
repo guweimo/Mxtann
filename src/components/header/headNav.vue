@@ -16,11 +16,11 @@
                         <mt-button class="mt-primary" @click="gotoSave">发布</mt-button>
                     </li>
                     <li>
-                        <div class="sign"  v-if="false">
+                        <div class="sign">
                             <router-link to="/login" class="a-inline">登录</router-link>
                             <router-link to="/register" class="a-inline">注册</router-link>
                         </div>
-                        <div class="user-info" @click="showDropdown">
+                        <div class="user-info" @click="showDropdown" v-if="false">
                             <img class="avatar" height="20" width="20">
                             <span class="dropdown-caret"></span>
                             <div class="dropdown-menu" v-show="dropdown">
