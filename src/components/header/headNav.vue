@@ -16,15 +16,15 @@
                         <mt-button class="mt-primary" @click="gotoSave">发布</mt-button>
                     </li>
                     <li>
-                        <div class="sign">
+                        <div class="sign" v-if="false">
                             <router-link to="/login" class="a-inline">登录</router-link>
                             <router-link to="/register" class="a-inline">注册</router-link>
                         </div>
-                        <div class="user-info" @click="showDropdown" v-if="false">
+                        <div class="user-info" @click="showDropdown" >
                             <img class="avatar" height="20" width="20">
+                            <span class="user-info-name">{{userInfo.name}}</span>
                             <span class="dropdown-caret"></span>
                             <div class="dropdown-menu" v-show="dropdown">
-                                fdsafdsf
                             </div>
                         </div>
                     </li>
@@ -58,7 +58,7 @@ export default {
         }
     },
     computed: {
-        ...mapState(['selectType'])
+        ...mapState(['selectType', 'userInfo'])
     },
     mounted() {
         this.setTitle()

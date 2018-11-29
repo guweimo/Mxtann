@@ -27,13 +27,14 @@ export default {
         state.selectType = type
     },
     [GET_USERINFO](state, info) {
-        if (state.userInfo && (state.userInfo.username !== info.username)) {
+        var len = Object.keys(state.userInfo)
+        if (len > 0 && (state.userInfo.username !== info.username)) {
 			return;
-		}
+        }
 		if (!info.message) {
 			state.userInfo = {...info};
 		} else {
-			state.userInfo = null;
+			state.userInfo = {};
 		}
     }
 }
