@@ -1,7 +1,7 @@
 <template>
     <div class="dropdown">
-        <span></span>
         <slot></slot>
+        <span></span>
         <ul>
             <li v-for="item in list" :key="item.id"></li>
         </ul>
