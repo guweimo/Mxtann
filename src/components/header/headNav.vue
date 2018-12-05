@@ -28,7 +28,11 @@
                             </a>
                             <div class="dropdown-menu" v-show="dropdown">
                                 <span></span>
-                                <ul></ul>
+                                <ul>
+                                    <li>我的主页</li>
+                                    <li>设置</li>
+                                    <li>退出</li>
+                                </ul>
                             </div>
                         </div>
                     </li>
@@ -163,14 +167,19 @@ export default {
         position: absolute;
         top: 100%;
         border: 1px solid #ccc;
-        padding: 20px;
         background: #fff;
         border-radius: 4px;
         margin-top: 20px;
-        min-width: 150px;
+        & li {
+            height: 36px;
+            color: #888;
+            text-align: left;
+            padding: 0 20px;
+            margin: 0;
+            line-height: 36px;
+        }
     }
 }
-
 
 #logo {
     a {
