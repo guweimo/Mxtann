@@ -21,10 +21,14 @@
                             <router-link to="/register" class="a-inline">注册</router-link>
                         </div>
                         <div class="user-info" @click="showDropdown" >
-                            <img class="avatar" height="20" width="20">
-                            <span class="user-info-name">{{userInfo.name}}</span>
-                            <span class="dropdown-caret"></span>
+                            <a class="user-info-link">
+                                <img class="avatar" height="20" width="20">
+                                <span class="user-info-name">{{userInfo.name}}</span>
+                                <span class="dropdown-caret"></span>
+                            </a>
                             <div class="dropdown-menu" v-show="dropdown">
+                                <span></span>
+                                <ul></ul>
                             </div>
                         </div>
                     </li>
@@ -136,7 +140,6 @@ export default {
 }
 
 .user-info {
-    cursor: pointer;
     position: relative;
     .dropdown-caret {
         display: inline-block;
@@ -156,9 +159,15 @@ export default {
         border-radius: 4px;
     }
     .dropdown-menu {
+        cursor: default;
         position: absolute;
         top: 100%;
         border: 1px solid #ccc;
+        padding: 20px;
+        background: #fff;
+        border-radius: 4px;
+        margin-top: 20px;
+        min-width: 150px;
     }
 }
 
