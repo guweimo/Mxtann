@@ -70,6 +70,9 @@ export default {
     },
     mounted() {
         this.setTitle()
+        window.addEventListener('click', (event) => {
+            let target = event.target
+        })
     },
     methods: {
         gotoSave() {
