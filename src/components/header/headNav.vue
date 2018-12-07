@@ -31,7 +31,7 @@
                                 <ul>
                                     <li>我的主页</li>
                                     <li>设置</li>
-                                    <li>退出</li>
+                                    <li @click="exit">退出</li>
                                 </ul>
                             </div>
                         </div>
@@ -90,6 +90,9 @@ export default {
         showDropdown() {
             this.dropdown = true
         },
+        exit() {
+            this.$router.push('/login')
+        }
     }
 }
 </script>
@@ -178,8 +181,13 @@ export default {
             color: #888;
             text-align: left;
             padding: 0 20px;
+            width: 100px;
+            cursor: pointer;
             margin: 0;
             line-height: 36px;
+            &:hover {
+                color: #333;
+            }
         }
     }
 }
