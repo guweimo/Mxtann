@@ -187,6 +187,7 @@ export default {
             line-height: 36px;
             &:hover {
                 color: #333;
+                background-color: #c3c3c3;
             }
         }
     }
