@@ -22,7 +22,7 @@
                         </div>
                         <div class="user-info" @click="showDropdown" v-if="userInfo.name">
                             <a class="user-info-link">
-                                <img class="avatar" height="20" width="20" :src="userInfo.avatar">
+                                <img class="avatar" height="20" width="20" :src="getAvatar">
                                 <span class="user-info-name">{{userInfo.name}}</span>
                                 <span class="dropdown-caret"></span>
                             </a>
@@ -43,6 +43,7 @@
 </template>
 
 <script>
+import picture from '../../assets/picture.jpg'
 import { removeStore } from '@/config/unit'
 import { mapState, mapMutations } from 'vuex'
 import mtButton from '@/components/common/mtButton'
@@ -67,7 +68,14 @@ export default {
         }
     },
     computed: {
-        ...mapState(['selectType', 'userInfo'])
+        ...mapState(['selectType', 'userInfo']),
+        getAvatar: function() {
+            let avatar = picture
+            if (this.userInfo.avatar) {
+                avatar = userInfo.avatar
+            }
+            return avatar
+        }
     },
     mounted() {
         this.setTitle()
