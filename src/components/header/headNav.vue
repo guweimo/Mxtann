@@ -16,13 +16,13 @@
                         <mt-button class="mt-primary" @click="gotoSave">发布</mt-button>
                     </li>
                     <li>
-                        <div class="sign" v-if="false">
+                        <div class="sign" v-if="!userInfo.name">
                             <router-link to="/login" class="a-inline">登录</router-link>
                             <router-link to="/register" class="a-inline">注册</router-link>
                         </div>
-                        <div class="user-info" @click="showDropdown" >
+                        <div class="user-info" @click="showDropdown" v-if="userInfo.name">
                             <a class="user-info-link">
-                                <img class="avatar" height="20" width="20">
+                                <img class="avatar" height="20" width="20" :src="userInfo.avatar">
                                 <span class="user-info-name">{{userInfo.name}}</span>
                                 <span class="dropdown-caret"></span>
                             </a>
@@ -43,6 +43,7 @@
 </template>
 
 <script>
+import { removeStore } from '@/config/unit'
 import { mapState, mapMutations } from 'vuex'
 import mtButton from '@/components/common/mtButton'
 import Bus from '@/config/bus'
@@ -88,9 +89,10 @@ export default {
             }
         },
         showDropdown() {
-            this.dropdown = true
+            this.dropdown = !this.dropdown
         },
         exit() {
+            removeStore('userinfo')
             this.$router.push('/login')
         }
     }

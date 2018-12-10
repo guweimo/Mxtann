@@ -7,11 +7,13 @@ export default {
         if (len.length > 0) {
             return true
         } else {
-            getUser().then((res) => {
-                if (res.data.status == 2000) {
-                    commit(GET_USERINFO, res.data.data)
-                }
-            })
+            if (getUser()) {
+                getUser().then((res) => {
+                    if (res.data.status == 2000) {
+                        commit(GET_USERINFO, res.data.data)
+                    }
+                })
+            }
         }
     }
 }
