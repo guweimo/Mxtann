@@ -1,7 +1,8 @@
 import {
     GET_NAV_DATA,
     SELECT_TYPE,
-    GET_USERINFO
+    GET_USERINFO,
+    REMOVE_USERINFO,
 } from './mutation-types'
 import { setStore, getStore } from '../config/unit'
 import { navType } from '../config/getData'
@@ -27,7 +28,7 @@ export default {
         state.selectType = type
     },
     [GET_USERINFO](state, info) {
-        var len = Object.keys(state.userInfo)
+        let len = Object.keys(state.userInfo)
         if (len > 0 && (state.userInfo.username !== info.username)) {
 			return;
         }
@@ -36,5 +37,8 @@ export default {
 		} else {
 			state.userInfo = {};
 		}
-    }
+    },
+    [REMOVE_USERINFO](state, info) {
+        state.userInfo = {}
+    },
 }

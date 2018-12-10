@@ -13,7 +13,7 @@
                         <input type="text" class="form-control" v-model="searchData.title" placeholder="请搜索博文" @keyup.13="searchTitle">
                     </li>
                     <li>
-                        <mt-button class="mt-primary" @click="gotoSave">发布</mt-button>
+                        <mt-button class="mt-primary" @click="gotoSave" v-if="userInfo.name">发布</mt-button>
                     </li>
                     <li>
                         <div class="sign" v-if="!userInfo.name">
@@ -29,7 +29,7 @@
                             <div class="dropdown-menu" v-show="dropdown">
                                 <span></span>
                                 <ul>
-                                    <li>我的主页</li>
+                                    <li @click="goRouter('people')">我的主页</li>
                                     <li>设置</li>
                                     <li @click="exit">退出</li>
                                 </ul>
@@ -76,6 +76,7 @@ export default {
         })
     },
     methods: {
+        ...mapMutations(['REMOVE_USERINFO']),
         gotoSave() {
             this.$router.push('/save')
         },
@@ -93,8 +94,12 @@ export default {
         },
         exit() {
             removeStore('userinfo')
+            this.REMOVE_USERINFO()
             this.$router.push('/login')
-        }
+        },
+        goRouter(router) {
+            // this.$router.push('/p')
+        },
     }
 }
 </script>
