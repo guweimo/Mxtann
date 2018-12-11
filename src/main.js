@@ -6,6 +6,7 @@ import router from './router'
 import store from './store/'
 import {request} from './config/axios'
 import messageVue from './components/message/index'
+import directives from './directives/directive'
 
 Vue.config.productionTip = false
 Vue.prototype.$axios = request
@@ -16,6 +17,7 @@ new Vue({
   el: '#app',
   router,
   store,
+  directives,
   components: { App },
   template: '<App/>'
 })

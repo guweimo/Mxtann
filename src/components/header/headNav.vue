@@ -72,7 +72,7 @@ export default {
         getAvatar: function() {
             let avatar = picture
             if (this.userInfo.avatar) {
-                avatar = userInfo.avatar
+                avatar = this.userInfo.avatar
             }
             return avatar
         }
