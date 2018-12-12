@@ -49,7 +49,7 @@ const messageBox = (options = {}) => {
     Vue.nextTick(() => {
         instance.show = true
         setTimeout(() => {
-           instance.close()
+            instance.close()
         }, options.duration);
     })
 
