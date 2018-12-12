@@ -51,6 +51,9 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
     // 判断是否匹配到路由，如果不匹配则跳转到home路由，反则继续跳转到当前的路由
+    Vue.prototype.$message({
+        close: true,
+    })
     if (to.matched.length == 0) {
         from.name ? next({name: from.name}) : next('/error/404') 
     } else {

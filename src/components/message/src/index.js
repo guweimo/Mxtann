@@ -24,9 +24,20 @@ messageVueConstructor.prototype.close = function() {
     this.show = false
 }
 
+const removeMessageVue = () => {
+    let message = document.querySelectorAll('.mei-message')
+    for (const item of message) {
+        item.remove()
+    }
+}
+
 const messageBox = (options = {}) => {
     if (Vue.prototype.$isServer) {
         return ;
+    }
+    if (options.close) {
+        removeMessageVue()
+        return 
     }
     options = Object.assign({}, defaults, options)
     let parent = document.body
