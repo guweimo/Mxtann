@@ -19,9 +19,6 @@ export default {
     },
     mounted() {
         this.search()
-        Bus.$on('searchTitle', (e) => {
-            this.search(e)
-        })
     },
     methods: {
         search(title) {

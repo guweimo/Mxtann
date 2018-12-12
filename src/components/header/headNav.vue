@@ -89,8 +89,9 @@ export default {
             this.$router.push('/save')
         },
         searchTitle($event) {
-            Bus.$emit('searchTitle', this.searchData.title)
-            this.$router.push(`/search/${this.searchData.title}`)
+            if (this.searchData.title.trim()) {
+                this.$router.push(`/search/${this.searchData.title}`)
+            }
         },
         setTitle() {
             if (this.$route.path.indexOf('/search/') > -1) {
