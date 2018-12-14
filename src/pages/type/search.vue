@@ -20,6 +20,9 @@ export default {
     mounted() {
         this.search()
     },
+    computed: {
+        
+    },
     methods: {
         search(title) {
             this.$axios.post('/apis/home/searchArticle', {
@@ -30,6 +33,6 @@ export default {
                 }
             })
         }
-    }
+    },
 }
 </script>

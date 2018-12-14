@@ -3,6 +3,7 @@ import {
     SELECT_TYPE,
     GET_USERINFO,
     REMOVE_USERINFO,
+    UPDATE_SEARCH_TITLE,
 } from './mutation-types'
 import { setStore, getStore } from '../config/unit'
 import { navType } from '../config/getData'
@@ -40,5 +41,8 @@ export default {
     },
     [REMOVE_USERINFO](state, info) {
         state.userInfo = {}
+    },
+    [UPDATE_SEARCH_TITLE](state, title) {
+        state.searchTitle = title
     },
 }
