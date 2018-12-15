@@ -84,7 +84,7 @@ export default {
         })
     },
     methods: {
-        ...mapMutations(['REMOVE_USERINFO']),
+        ...mapMutations(['REMOVE_USERINFO', 'UPDATE_SEARCH_TITLE']),
         gotoSave() {
             this.$router.push('/save')
         },
