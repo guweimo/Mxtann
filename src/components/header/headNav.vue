@@ -47,7 +47,6 @@ import picture from '../../assets/picture.jpg'
 import { removeStore } from '@/config/unit'
 import { mapState, mapMutations } from 'vuex'
 import mtButton from '@/components/common/mtButton'
-import Bus from '@/config/bus'
 
 export default {
     components: {
@@ -90,6 +89,7 @@ export default {
         },
         searchTitle($event) {
             if (this.searchData.title.trim()) {
+                this.UPDATE_SEARCH_TITLE(this.searchData.title)
                 this.$router.push(`/search/${this.searchData.title}`)
             }
         },

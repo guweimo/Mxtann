@@ -6,7 +6,6 @@
 
 <script>
 import articleList from '@/components/articleList'
-import Bus from '@/config/bus'
 import { mapState, mapMutations } from 'vuex'
 
 export default {
@@ -22,10 +21,9 @@ export default {
         this.search()
     },
     computed: {
-        
+        ...mapState(['searchTitle']),
     },
     methods: {
-        ...mapMutations(['UPDATE_SEARCH_TITLE']),
         search(title) {
             this.$axios.post('/apis/home/searchArticle', {
                 title: title || this.$route.params.title
@@ -34,6 +32,11 @@ export default {
                     this.list = res.data.data
                 }
             })
+        }
+    },
+    watch: {
+        searchTitle: function(newVal, oldVal) {
+            this.search(newVal)
         }
     },
 }
