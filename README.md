@@ -1,12 +1,29 @@
-# Mxtan
-博客
+# vue-cli3.0-demo
 
-## 功能
-- [x] 搜索标题
-- [x] 登录
-- [x] 注册
-- [x] 首页
-- [x] 分类列表
-- [x] 博文详情
-- [ ] 评论
-- [ ] 个人信息
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Run your tests
+```
+npm run test
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
