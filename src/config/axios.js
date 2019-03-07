@@ -5,6 +5,28 @@ let jsonType = {
 	'X-Requested-With': 'XMLHttpRequest'
 }
 
+const baseURL = process.env.NODE_ENV === 'development' ? '/apis' : process.env.BASE_API
+const service = axios.create({
+    baseURL,
+    timeout: 15 * 1000
+})
+
+service.interceptors.request.use(
+    config => {
+        return config
+    },
+    error => {
+        Promise.reject(error)
+    }
+)
+
+service.interceptors.response.use(
+    config => response,
+    error => {
+        return Promise.reject(error)
+    }
+)
+
 // 请求完成拦截
 axios.interceptors.response.use(function(config) {
     return config
