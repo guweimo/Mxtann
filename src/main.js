@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store/'
-import {request} from './config/axios'
+import request from './config/request'
 import messageVue from './components/message/index'
 import directives from './directives/directive'
 

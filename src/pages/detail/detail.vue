@@ -8,6 +8,7 @@
 
 <script>
 import articleDetail from '@/components/articleDetail'
+import { getArticleDetail } from '@/apis/article'
 
 export default {
     components: {
@@ -24,9 +25,7 @@ export default {
     methods: {
         // 获取博文详情
         obtionDetailData() {
-            this.$axios.get('/apis/article/detail', {
-                id: this.$route.params.id
-            }).then(res => {
+            getArticleDetail(this.$route.params.id).then(res => {
                 if (res.data.status === 2000) {
                     this.detailData = res.data.data
                 } else {

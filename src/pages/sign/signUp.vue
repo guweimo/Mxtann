@@ -26,6 +26,7 @@
 
 <script>
 import mtButton from '@/components/common/mtButton'
+import { registerUser } from '@/apis/user'
 
 let emailRE = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
@@ -69,12 +70,13 @@ export default {
     methods: {
         register() {
             if (this.isValid) {
-                this.$axios.post('/apis/sign/registerUser', this.formData).then(res => {
-                    if (res.data.status === 2000) {
+                registerUser(this.formData).then(res => {
+                    const resData = res.data
+                    if (resData.status === 2000) {
                         this.$router.replace('/login')
                     } else {
-                        if (res.data.type) {
-                            this[`${res.data.type}Error`] = res.data.message
+                        if (resData.type) {
+                            this[`${resData.type}Error`] = resData.message
                         }
                     }
                 })

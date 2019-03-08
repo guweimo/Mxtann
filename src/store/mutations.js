@@ -6,7 +6,7 @@ import {
     UPDATE_SEARCH_TITLE,
 } from './mutation-types'
 import { setStore, getStore } from '../config/unit'
-import { navType } from '../config/getData'
+import { getMenus } from '../apis/article'
 
 let navName = 'navlist'
 
@@ -17,7 +17,7 @@ export default {
             if (navlist != null) {
                 state.navData = navlist
             }
-            navType().then(res => {
+            getMenus().then(res => {
                 if (res.data.status == 2000) {
                     setStore(navName, res.data.data)
                     state.navData = res.data.data

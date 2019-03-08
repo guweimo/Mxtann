@@ -6,7 +6,7 @@
 
 <script>
 import articleList from '@/components/articleList'
-import { pageList } from '@/config/getData'
+import { getList } from '@/apis/article'
 
 export default {
     components: {
@@ -18,7 +18,7 @@ export default {
         }
     },
     mounted() {
-        pageList('3').then(res => {
+        getList('3').then(res => {
             if (res.data.status == 2000) {
                 this.list = res.data.data
             }

@@ -17,6 +17,7 @@
 <script>
 import { setStore } from '@/config/unit'
 import mtButton from '@/components/common/mtButton'
+import { login } from '@/apis/user'
 
 // 登录
 export default {
@@ -45,8 +46,7 @@ export default {
             if (tip) {
                 return false
             }
-            
-            this.$axios.post('/apis/sign/loginUser', this.formData).then(res => {
+            login(this.formData).then(res => {
                 if (res.data.status == 2001) {
                     this.isError = true
                     this.errorText = res.data.message

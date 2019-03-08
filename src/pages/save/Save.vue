@@ -33,6 +33,7 @@ import 'mavon-editor/dist/css/index.css'
 import { mapState, mapMutations } from 'vuex'
 import mtButton from '@/components/common/mtButton'
 import { verifyFormValue } from '@/config/unit'
+import { operateArticle } from '@/apis/article'
 
 export default {
     name: 'Save',
@@ -124,13 +125,14 @@ export default {
             let isbol = this.verifyform()
             if (!isbol) return;
             this.formData.title = this.formData.title.trim()
-            this.$axios.post('/apis/home/addArticle', this.formData).then(res => {
-                if (res.data.status === 2000) {
-                    this.$router.replace(`/article/${res.data.data}`)
+            operateArticle(this.formData).then(res => {
+                const resData = res.data
+                if (resData.status === 2000) {
+                    this.$router.replace(`/article/${resData.data}`)
                 } else {
                     this.$message({
                         type: 'error',
-                        content: res.data.message
+                        content: resData.message
                     })
                 }
             })

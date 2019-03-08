@@ -1,4 +1,4 @@
-import {request} from './axios'
+import request from './request'
 import { getStore } from './unit'
 
 // 获取当前用户信息

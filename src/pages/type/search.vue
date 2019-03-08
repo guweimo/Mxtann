@@ -7,6 +7,7 @@
 <script>
 import articleList from '@/components/articleList'
 import { mapState, mapMutations } from 'vuex'
+import { searchArticle } from '@/apis/article'
 
 export default {
     components: {
@@ -25,11 +26,11 @@ export default {
     },
     methods: {
         search(title) {
-            this.$axios.post('/apis/home/searchArticle', {
-                title: title || this.$route.params.title
-            }).then( (res) => {
-                if (res.data.status == 2000) {
-                    this.list = res.data.data
+            let data = title || this.$route.params.title
+            searchArticle(data).then(res => {
+                const resData = res.data
+                if (resData.status == 2000) {
+                    this.list = resData.data
                 }
             })
         }
