@@ -56,4 +56,13 @@ export default {
         display: flex;
     }
 }
+
+.markdown-body /deep/ {
+    ul {
+        list-style-type: disc;
+    }
+    ol {
+        list-style-type: decimal;
+    }
+}
 </style>
