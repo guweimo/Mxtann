@@ -34,6 +34,8 @@
 </template>
 
 <script>
+import 'mavon-editor/dist/css/index.css'
+
 export default {
     name: 'marktext',
     props: {

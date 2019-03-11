@@ -157,55 +157,63 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .form-content {
-        width: 80%;
-        margin: 0 auto;
-        background-color: #fff;
-        padding: 50px;
-        border-radius: 5px;
-        box-shadow: 5px 7px 15px rgba(0, 0, 0, 0.3);
-        h2 {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-    }
-    .form-group {
+.form-content {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 5px;
+    box-shadow: 5px 7px 15px rgba(0, 0, 0, 0.3);
+    h2 {
+        text-align: center;
         margin-bottom: 10px;
-        label {
-            display: block;
-        }
-        .form-top-item {
-            margin-bottom: 10px;
-        }
-        input {
-            display: block;
-            width: 100%;
-        }
-        select {
-            display: block;
-            width: 100%;
-        }
-        .form-star {
-            color: red;
-            padding-right: 2px;
-            vertical-align: middle;
-            font-family: verdana;
-        }
+    }
+}
+.form-group {
+    margin-bottom: 10px;
+    label {
+        display: block;
+    }
+    .form-top-item {
+        margin-bottom: 10px;
+    }
+    input {
+        display: block;
+        width: 100%;
+    }
+    select {
+        display: block;
+        width: 100%;
+    }
+    .form-star {
+        color: red;
+        padding-right: 2px;
+        vertical-align: middle;
+        font-family: verdana;
+    }
+}
+.form-bottom {
+    text-align: center;
+    margin-top: 30px;
+    button:first-of-type {
+        margin-right: 50px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .form-content {
+        width: 100%;
+        padding: 10px;
     }
     .form-bottom {
-        text-align: center;
-        margin-top: 30px;
-        button:first-of-type {
-            margin-right: 50px;
-        }
+        margin-top: 15px;
     }
-    @media screen and (max-width: 768px) {
-        .form-content {
-            width: 100%;
-            padding: 10px;
-        }
-        .form-bottom {
-            margin-top: 15px;
-        }
+}
+.form-group /deep/ .markdown-body {
+    ul {
+        list-style-type: disc;
     }
+    ol {
+        list-style-type: decimal;
+    }
+}
 </style>

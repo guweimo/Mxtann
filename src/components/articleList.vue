@@ -11,15 +11,12 @@
                         </h1>
                         <div class="article-header">
                             <div class="">
-                                作者：
-                                <span v-text="item.author"></span>
-                                日期：
-                                <span v-text="item.date"></span>
+                                作者：<span v-text="item.author"></span>
+                                日期：<span v-text="item.date"></span>
                             </div>
                         </div>
                         <div class="body-content">
-                            <div class="">
-                                <p v-html="item.description"></p>
+                            <div class="markdown-body" v-html="item.description">
                             </div>
                         </div>
                     </div>
@@ -34,6 +31,8 @@
 </template>
 
 <script>
+import 'mavon-editor/dist/css/index.css'
+
 let resizeFn = null
 
 export default {
@@ -118,5 +117,14 @@ export default {
     font-size: 24px;
     font-weight: bold;
     color: rgb(216, 38, 106);
+}
+
+.markdown-body /deep/ {
+    ul {
+        list-style-type: disc;
+    }
+    ol {
+        list-style-type: decimal;
+    }
 }
 </style>
