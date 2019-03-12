@@ -7,7 +7,7 @@
                         <h1>
                             <!-- <a v-text="item.title" ></a> -->
                             <router-link v-text="item.title" :to="{name: 'article', params: {id: item.id}}"></router-link>
-                            
+
                         </h1>
                         <div class="article-header">
                             <div class="">
@@ -31,8 +31,6 @@
 </template>
 
 <script>
-import 'mavon-editor/dist/css/index.css'
-
 let resizeFn = null
 
 export default {

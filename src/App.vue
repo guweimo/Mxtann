@@ -13,5 +13,6 @@ export default {
 }
 </script>
 <style lang="scss">
+@import './assets/sass/markdown';
 @import './assets/sass/base';
 </style>

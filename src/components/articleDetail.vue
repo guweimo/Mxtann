@@ -21,8 +21,6 @@
 </template>
 
 <script>
-import 'mavon-editor/dist/css/index.css'
-
 export default {
     data() {
         return {}
