@@ -1,7 +1,7 @@
 # Mxtan
-博客 
+博客
 
-地址：[地址在这里](http://www.guweimo.com) 或 [地址在这里](http://111.231.249.33)	
+地址：[地址在这里](https://www.guweimo.com)
 
 ## 功能
 - [x] 搜索标题
