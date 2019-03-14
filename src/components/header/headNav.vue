@@ -16,10 +16,10 @@
                         <mt-button class="mt-primary" @click="gotoSave" v-if="userInfo.name">发布</mt-button>
                     </li>
                     <li>
-                        <div class="sign" v-if="!userInfo.name">
+                        <!-- <div class="sign" v-if="!userInfo.name">
                             <router-link to="/login" class="a-inline">登录</router-link>
                             <router-link to="/register" class="a-inline">注册</router-link>
-                        </div>
+                        </div> -->
                         <div class="user-info" @click="showDropdown" v-if="userInfo.name">
                             <a class="user-info-link">
                                 <img class="avatar" height="20" width="20" :src="getAvatar">
