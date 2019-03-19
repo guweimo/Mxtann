@@ -1,14 +1,12 @@
 <template>
-    <div>
-
-    </div>
+  <div></div>
 </template>
 
 <script>
 export default {
-    data() {
-        return {}
-    },
-    mehtods: {}
+  data() {
+    return {}
+  },
+  mehtods: {}
 }
 </script>
