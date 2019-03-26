@@ -30,8 +30,8 @@
                             <router-link to="/login" class="a-inline">登录</router-link>
                             <router-link to="/register" class="a-inline">注册</router-link>
             </div>-->
-            <div class="user-info" @click="showDropdown" v-if="userInfo.name">
-              <a class="user-info-link">
+            <div class="user-info"  v-if="userInfo.name">
+              <a class="user-info-link" @click="showDropdown">
                 <img class="avatar" height="20" width="20" :src="getAvatar">
                 <span class="user-info-name">{{userInfo.name}}</span>
                 <span class="dropdown-caret"></span>
@@ -57,6 +57,8 @@ import picture from '../../assets/picture.jpg'
 import { removeStore } from '@/config/unit'
 import { mapState, mapMutations } from 'vuex'
 import mtButton from '@/components/common/mtButton'
+
+let dropdownEvent = null
 
 export default {
   components: {
@@ -88,9 +90,25 @@ export default {
   },
   mounted() {
     this.setTitle()
-    window.addEventListener('click', event => {
+    dropdownEvent = event => {
       let target = event.target
-    })
+      let userInfoLink = document.querySelector('.user-info-link')
+      let userInfoLinkChild = userInfoLink.childNodes
+      let hasNode = false
+      if (target == userInfoLink) {
+        hasNode = true
+      }
+      for (let item of userInfoLinkChild) {
+        if (item == target) {
+          hasNode = true
+          break
+        }
+      }
+      if (this.dropdown && !hasNode) {
+        this.dropdown = false
+      }
+    }
+    window.addEventListener('click', dropdownEvent)
   },
   methods: {
     ...mapMutations(['REMOVE_USERINFO', 'UPDATE_SEARCH_TITLE']),
@@ -118,6 +136,11 @@ export default {
     },
     goRouter(router) {
       // this.$router.push('/p')
+    }
+  },
+  destroyed() {
+    if (dropdownEvent) {
+      window.removeEventListener('click', dropdownEvent)
     }
   }
 }
