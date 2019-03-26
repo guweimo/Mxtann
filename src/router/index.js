@@ -1,20 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Blog from '@/pages/blog/Blog'
-import Save from '@/pages/save/Save'
-import markPreview from '@/pages/preview/markPreview'
-import Home from '@/pages/home/home'
-import Main from '@/pages/home/main'
-import signIn from '@/pages/sign/signIn'
-import signUp from '@/pages/sign/signUp'
-import error from '@/pages/error/error'
-import notFound from '@/pages/error/404'
-import jsList from '@/pages/type/jsList'
-import cssList from '@/pages/type/cssList'
-import vueList from '@/pages/type/vueList'
-import search from '@/pages/type/search'
-import detail from '@/pages/detail/detail'
-import test from '@/pages/test/test'
 
 Vue.use(Router)
 
@@ -22,60 +7,60 @@ const router = new Router({
   mode: 'history',
   routes: [{
       path: '/',
-      component: Blog
+      component: () => import('@/views/blog/Blog')
     },
     {
       path: '/login',
-      component: signIn
+      component: () => import('@/views/sign/signIn')
     },
     // { path: '/register', component: signUp },
     {
       path: '/main',
-      component: Main,
+      component: () => import('@/views/home/main'),
       children: [{
           path: '/home',
-          component: Home
+          component: () => import('@/views/home/home')
         },
         {
           path: '/markPreview',
-          component: markPreview
+          component: () => import('@/views/preview/markPreview')
         },
         {
           path: '/save',
-          component: Save
+          component: () => import('@/views/save/Save')
         },
         {
           path: '/error',
-          component: error,
+          component: () => import('@/views/error/error'),
           children: [{
             path: '404',
-            component: notFound
+            component: () => import('@/views/error/404')
           }]
         },
         {
           path: '/javascript',
-          component: jsList
+          component: () => import('@/views/list/jsList')
         },
         {
           path: '/css',
-          component: cssList
+          component: () => import('@/views/list/cssList')
         },
         {
           path: '/vue',
-          component: vueList
+          component: () => import('@/views/list/vueList')
         },
         {
           path: '/search/:title',
-          component: search
+          component: () => import('@/views/list/search')
         },
         {
           name: 'article',
           path: '/article/:id',
-          component: detail
+          component: () => import('@/views/detail/detail')
         },
         {
           path: '/test',
-          component: test
+          component: () => import('@/views/test/test')
         },
       ]
     },

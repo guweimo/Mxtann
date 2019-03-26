@@ -12,7 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/apis': {
-        target: 'http://localhost:3000',
+        target: 'https://api.guweimo.com',
         secure: false,
         changeOrigin: true,
         pathRewrite: {
