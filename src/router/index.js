@@ -5,7 +5,8 @@ Vue.use(Router)
 
 const router = new Router({
   mode: 'history',
-  routes: [{
+  routes: [
+    {
       path: '/',
       component: () => import('@/views/blog/Blog')
     },
@@ -17,7 +18,8 @@ const router = new Router({
     {
       path: '/main',
       component: () => import('@/views/home/main'),
-      children: [{
+      children: [
+        {
           path: '/home',
           component: () => import('@/views/home/home')
         },
@@ -32,10 +34,12 @@ const router = new Router({
         {
           path: '/error',
           component: () => import('@/views/error/error'),
-          children: [{
-            path: '404',
-            component: () => import('@/views/error/404')
-          }]
+          children: [
+            {
+              path: '404',
+              component: () => import('@/views/error/404')
+            }
+          ]
         },
         {
           path: '/javascript',
@@ -68,6 +72,10 @@ const router = new Router({
         },
       ]
     },
+    {
+      path: '*',
+      component: () => import('@/views/error/404')
+    }
   ]
 })
 
