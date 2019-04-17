@@ -20,7 +20,7 @@ const actions = {
       let result = null
       let userinfo = getStore('userinfo', true)
       if (userinfo) {
-        result = getUser
+        result = getUser(userinfo.id)
       }
       if (result) {
         result.then(res => {

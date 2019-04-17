@@ -79,7 +79,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['selectType', 'userInfo']),
+    ...mapState('user', ['selectType', 'userInfo']),
     getAvatar: function() {
       let avatar = picture
       if (this.userInfo.avatar) {

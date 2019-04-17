@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     ...mapMutations(['GET_NAV_DATA']),
-    ...mapActions(['getUserInfo'])
+    ...mapActions('user', ['getUserInfo'])
   }
 }
 </script>
