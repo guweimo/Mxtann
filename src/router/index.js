@@ -94,7 +94,7 @@ router.beforeEach((to, from, next) => {
   }
 
   const type = to.path.replace(/\//ig, '')
-  router.app.$options.store.state.selectType = type
+  router.app.$options.store.state.user.selectType = type
 })
 
 export default router

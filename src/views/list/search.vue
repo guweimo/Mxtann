@@ -6,7 +6,7 @@
 
 <script>
 import articleList from '@/components/articleList'
-import { mapState, mapMutations } from 'vuex'
+import { mapState } from 'vuex'
 import { searchArticle } from '@/apis/article'
 
 export default {
@@ -22,7 +22,7 @@ export default {
     this.search()
   },
   computed: {
-    ...mapState(['searchTitle'])
+    ...mapState('user', ['searchTitle'])
   },
   methods: {
     search(title) {

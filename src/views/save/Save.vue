@@ -42,7 +42,7 @@
 <script>
 import { mavonEditor } from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
-import { mapState, mapMutations } from 'vuex'
+import { mapState } from 'vuex'
 import mtButton from '@/components/common/mtButton'
 import { verifyFormValue } from '@/config/unit'
 import { operateArticle } from '@/apis/article'
@@ -106,7 +106,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['navData'])
+    ...mapState('user', ['navData'])
   },
   methods: {
     sizeToStatus() {

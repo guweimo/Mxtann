@@ -111,13 +111,13 @@ export default {
     window.addEventListener('click', dropdownEvent)
   },
   methods: {
-    ...mapMutations(['REMOVE_USERINFO', 'UPDATE_SEARCH_TITLE']),
+    ...mapMutations('user', ['removeUserinfo', 'updateSearchTitle']),
     gotoSave() {
       this.$router.push('/save')
     },
     searchTitle($event) {
       if (this.searchData.title.trim()) {
-        this.UPDATE_SEARCH_TITLE(this.searchData.title)
+        this.updateSearchTitle(this.searchData.title)
         this.$router.push(`/search/${this.searchData.title}`)
       }
     },
@@ -131,7 +131,7 @@ export default {
     },
     exit() {
       removeStore('userinfo')
-      this.REMOVE_USERINFO()
+      this.removeUserinfo()
       this.$router.push('/login')
     },
     goRouter(router) {

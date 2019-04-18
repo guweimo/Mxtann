@@ -23,13 +23,13 @@ export default {
     this.getUserInfo()
   },
   computed: {
-    ...mapState(['navData'])
+    ...mapState('user', ['navData'])
   },
   mounted() {
-    this.GET_NAV_DATA()
+    this.getNavData()
   },
   methods: {
-    ...mapMutations(['GET_NAV_DATA']),
+    ...mapMutations('user', ['getNavData']),
     ...mapActions('user', ['getUserInfo'])
   }
 }
