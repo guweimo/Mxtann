@@ -1,6 +1,5 @@
 import request from '../config/request'
 
-
 // 登录
 export const login = data => {
   return request({

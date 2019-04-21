@@ -4,7 +4,7 @@
  * @param {*} content
  */
 export const setStore = (name, content) => {
-  if (!name) return;
+  if (!name) return
   if (typeof content !== 'string') {
     content = JSON.stringify(content)
   }
@@ -17,8 +17,8 @@ export const setStore = (name, content) => {
  * @param {Boolean} isConversion 判断是否需要把json转成json对象
  */
 export const getStore = (name, isConversion = false) => {
-  if (!name) return;
-  let result = window.localStorage.getItem(name);
+  if (!name) return
+  let result = window.localStorage.getItem(name)
   if (isConversion) {
     result = JSON.parse(result)
   }
@@ -30,7 +30,7 @@ export const getStore = (name, isConversion = false) => {
  * @param {String} name
  */
 export const removeStore = name => {
-  if (!name) return;
+  if (!name) return
   window.localStorage.removeItem(name)
 }
 
@@ -40,8 +40,8 @@ export const removeStore = name => {
  * @param { * } content
  */
 export const setSession = (name, content) => {
-  if (!name) return;
-  if (typeof content == 'string') {
+  if (!name) return
+  if (typeof content === 'string') {
     content = JSON.stringify(content)
   }
   window.sessionStorage.setItem(name, content)
@@ -53,7 +53,7 @@ export const setSession = (name, content) => {
  * @param {Boolean} isConversion 判断是否需要把json转成json对象
  */
 export const getSession = (name, isConversion = false) => {
-  if (!name) return;
+  if (!name) return
   let result = window.sessionStorage.getItem(name)
   if (isConversion) {
     result = JSON.parse(result)
@@ -66,7 +66,7 @@ export const getSession = (name, isConversion = false) => {
  * @param {String} name
  */
 export const removeSession = name => {
-  if (!name) return;
+  if (!name) return
   window.sessionStorage.removeItem(name)
 }
 
@@ -85,7 +85,7 @@ export const verifyFormValue = (formData = {}, nameArr = []) => {
     if (empty || formData[item.name] === undefined) {
       result.bol = false
       result.msg = item.msg
-      break;
+      break
     }
   }
 
