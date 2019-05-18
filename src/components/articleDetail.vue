@@ -32,32 +32,32 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
-.aritcle-detail {
-  .title {
-    text-align: center;
-    h1 {
-      color: #29b4f0;
-    }
-  }
-  .content {
-    margin: 20px 0;
-  }
-  .info {
-    color: #ccc;
-    border-bottom: 1px dashed #ccc;
-    padding-bottom: 5px;
-    font-size: 0.929rem;
-    display: flex;
-  }
+<style scoped>
+.aritcle-detail .title {
+  text-align: center;
 }
 
-.markdown-body /deep/ {
-  ul {
-    list-style-type: disc;
-  }
-  ol {
-    list-style-type: decimal;
-  }
+.aritcle-detail .title h1 {
+  color: #29b4f0;
+}
+
+.aritcle-detail .content {
+  margin: 20px 0;
+}
+
+.aritcle-detail .info {
+  color: #ccc;
+  border-bottom: 1px dashed #ccc;
+  padding-bottom: 5px;
+  font-size: 0.929rem;
+  display: flex;
+}
+
+.markdown-body >>> ul {
+  list-style-type: disc;
+}
+
+.markdown-body >>> ol {
+  list-style-type: decimal;
 }
 </style>

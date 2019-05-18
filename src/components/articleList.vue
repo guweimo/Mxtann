@@ -128,13 +128,14 @@ export default {
   font-weight: bold;
   color: rgb(216, 38, 106);
 }
+</style>
 
-.markdown-body /deep/ {
-  ul {
-    list-style-type: disc;
-  }
-  ol {
-    list-style-type: decimal;
-  }
+<style scoped>
+.markdown-body >>> ul {
+  list-style-type: disc;
+}
+
+.markdown-body >>> ol {
+  list-style-type: decimal;
 }
 </style>

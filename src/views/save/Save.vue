@@ -228,12 +228,14 @@ export default {
     margin-top: 15px;
   }
 }
-.form-group /deep/ .markdown-body {
-  ul {
-    list-style-type: disc;
-  }
-  ol {
-    list-style-type: decimal;
-  }
+</style>
+
+<style scoped>
+.form-group >>> .markdown-body ul {
+  list-style-type: disc;
+}
+
+.form-group >>> .markdown-body ol {
+  list-style-type: decimal;
 }
 </style>
