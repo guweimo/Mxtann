@@ -4,4 +4,7 @@
   </div>
 </template>
 
-<style lang="less"></style>
+<style lang="less">
+// @import './styles/base';
+// @import './styles/markdown';
+</style>

@@ -101,7 +101,7 @@ export default {
 .blog-logo {
   height: 200px;
   width: 200px;
-  background-image: url('../../assets/picture.jpg');
+  background-image: url('~@/assets/picture.jpg');
   background-repeat: no-repeat;
   border-radius: 50%;
   margin-bottom: 20px;

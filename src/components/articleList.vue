@@ -129,7 +129,7 @@ export default {
   color: rgb(216, 38, 106);
 }
 
-.markdown-body >>> {
+.markdown-body /deep/ {
   ul {
     list-style-type: disc;
   }

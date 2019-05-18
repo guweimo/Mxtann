@@ -5,12 +5,12 @@ import NProgress from 'nprogress'
 Vue.use(Router)
 
 const router = new Router({
-  mode: 'histroy',
+  mode: 'history',
   base: process.env.BASE_URL,
   routes: [
     {
       path: '/',
-      component: () => import('@/views/blog/Blog'),
+      component: () => import('@/views/blog/blog'),
     },
     {
       path: '/login',

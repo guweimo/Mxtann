@@ -52,7 +52,7 @@ export default {
   }
 }
 
-.markdown-body >>> {
+.markdown-body /deep/ {
   ul {
     list-style-type: disc;
   }

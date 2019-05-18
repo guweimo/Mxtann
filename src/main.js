@@ -5,8 +5,8 @@ import store from './store'
 import request from './utils/request'
 import messageVue from './components/message/index'
 
-import '@/styles/markdown'
-import '@/styles/base'
+import './styles/base.less'
+import './styles/markdown.less'
 
 Vue.config.productionTip = false
 

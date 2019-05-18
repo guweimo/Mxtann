@@ -228,7 +228,7 @@ export default {
     margin-top: 15px;
   }
 }
-.form-group >>> .markdown-body {
+.form-group /deep/ .markdown-body {
   ul {
     list-style-type: disc;
   }
