@@ -65,7 +65,7 @@ export default {
     return {
       formData: {
         marktext: '',
-        description: '',
+        content: '',
         title: '',
         type: '',
       },
@@ -110,6 +110,7 @@ export default {
   },
   created() {
     this.sizeToStatus()
+    this.getType()
     window.onresize = () => {
       this.sizeToStatus()
     }
@@ -142,7 +143,7 @@ export default {
       }
     },
     obtainHTML(text, html) {
-      this.formData.description = html
+      this.formData.content = html
     },
     cancel() {
       this.$router.replace('/home')
@@ -154,7 +155,11 @@ export default {
       addBlog(this.formData).then(res => {
         const resData = res.data
         if (resData.status === 2000) {
-          this.$router.replace(`/article/${resData.data}`)
+          // this.$router.replace(`/article/${resData.data}`)
+          this.$message({
+            type: 'success',
+            conetent: '添加成功',
+          })
         } else {
           this.$message({
             type: 'error',

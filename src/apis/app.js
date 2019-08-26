@@ -23,7 +23,7 @@ export const addBlog = data => {
 // 搜索文章
 export const getTypeList = () => {
   return request({
-    url: '/app/getTypeList',
+    url: '/app/getType',
     method: 'get',
   })
 }

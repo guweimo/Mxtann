@@ -72,6 +72,10 @@ const router = new Router({
           path: '/profile',
           component: () => import('@/views/profile/profile'),
         },
+        {
+          path: '/app/save',
+          component: () => import('@/views/app-page/add'),
+        },
       ],
     },
     {
