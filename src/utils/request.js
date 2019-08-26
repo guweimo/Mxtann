@@ -1,4 +1,5 @@
 import axios from 'axios'
+import messageVue from '../components/message/index'
 
 const baseURL =
   process.env.NODE_ENV === 'development' ? '/apis' : process.env.BASE_API
@@ -17,7 +18,16 @@ service.interceptors.request.use(
 )
 
 service.interceptors.response.use(
-  response => response,
+  response => {
+    let status = response.data.status
+    if (status != 2000) {
+      messageVue({
+        type: 'error',
+        content: response.data.message,
+      })
+    }
+    return response
+  },
   error => {
     return Promise.reject(error)
   },

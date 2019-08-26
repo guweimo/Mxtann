@@ -20,7 +20,7 @@ module.exports = {
   devServer: {
     proxy: {
       '/api': {
-        target: 'https://api.guweimo.com',
+        target: 'localhost:3080',
         secure: false,
         changeOrigin: true,
         pathRewrite: {
