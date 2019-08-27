@@ -158,7 +158,7 @@ export default {
           // this.$router.replace(`/article/${resData.data}`)
           this.$message({
             type: 'success',
-            conetent: '添加成功',
+            content: '添加成功',
           })
         } else {
           this.$message({
