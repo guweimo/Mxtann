@@ -2,7 +2,7 @@ import axios from 'axios'
 import messageVue from '../components/message/index'
 
 const baseURL =
-  process.env.NODE_ENV === 'development' ? '/apis' : process.env.BASE_API
+  process.env.NODE_ENV === 'development' ? '/apis' : `//api.guweimo.com`
 const service = axios.create({
   baseURL,
   timeout: 15 * 1000,
